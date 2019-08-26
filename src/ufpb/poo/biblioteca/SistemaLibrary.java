@@ -1,14 +1,19 @@
 package ufpb.poo.biblioteca;
 
+import java.lang.invoke.LambdaConversionException;
 import java.util.ArrayList;
 
+import ufpb.poo.biblioteca.exception.*;
+
 public class SistemaLibrary implements Library {
-	
+
 	ArrayList<Livro> listaLivro;
 	ArrayList<Funcionario> listaFuncionario;
 	ArrayList<Usuario> listaUsuario;
 
-	public void efetuarEmprestimo(Livro book, Usuario cliente) {
+	public void efetuarEmprestimo(Livro book, Usuario cliente) throws LivroException {
+		if (book == null || cliente == null)
+			throw new LivroException("Objeto nulo, tente novamente!");
 		cliente.setLivroLocado(book);
 		book.setDisponivel(false);
 	}
@@ -22,21 +27,23 @@ public class SistemaLibrary implements Library {
 		listaLivro.add(book);
 	}
 
-	public Livro alterarLivro(Livro book) {
+	public Livro alterarLivro(Livro book) throws LivroException {
 		return this.buscaLivro(book);
 	}
 
-	public Livro buscaLivro(Livro book) {
+	public Livro buscaLivro(Livro book) throws LivroException {
 		Livro livro = null;
 		for (Livro l : listaLivro) {
 			if (l.getCodigo().equals(book.getCodigo())) {
 				livro = l;
 			}
 		}
+		if (livro == null)
+			throw new LivroException("Livro não encontrado");
 		return livro;
 	}
 
-	public boolean excluirLivro(Livro book) {
+	public boolean excluirLivro(Livro book) throws LivroException{
 		boolean tmp = false;
 		for (Livro l : listaLivro) {
 			if (l.getCodigo().equals(book.getCodigo())) {
@@ -44,24 +51,30 @@ public class SistemaLibrary implements Library {
 				listaLivro.remove(book);
 			}
 		}
+		if(tmp == false)
+			throw new LivroException("Livro não encontrado!");
 		return tmp;
 	}
 
-	public Usuario consultarUsuario(Usuario cliente) {
+	public Usuario consultarUsuario(Usuario cliente) throws UsuarioException {
 		Usuario usuario = null;
 		for (Usuario u : listaUsuario) {
 			if (u.getCpf().equals(cliente.getCpf())) {
 				usuario = u;
 			}
 		}
+		if (usuario == null)
+			throw new UsuarioException("Usuário não encontrado");
 		return usuario;
 	}
 
-	public void cadastrarUsuario(Usuario cliente) {
+	public void cadastrarUsuario(Usuario cliente) throws UsuarioException {
+		if (isEqualsCpf(cliente))
+			throw new UsuarioException("Usuário já existe!");
 		listaUsuario.add(cliente);
 	}
 
-	public Usuario alterarUsuario(Usuario cliente) {
+	public Usuario alterarUsuario(Usuario cliente) throws UsuarioException {
 		return this.consultarUsuario(cliente);
 	}
 
@@ -93,7 +106,7 @@ public class SistemaLibrary implements Library {
 	}
 
 	@Override
-	public boolean verificarLogin(Funcionario funcionario){
+	public boolean verificarLogin(Funcionario funcionario) {
 		boolean logado = false;
 		for (Funcionario f : this.listaFuncionario) {
 			if (f.equals(funcionario)) {
@@ -113,7 +126,7 @@ public class SistemaLibrary implements Library {
 		return usuariosEncontrados;
 	}
 
-	public Usuario buscaCpf(String cpf) {
+	public Usuario buscaCpf(String cpf) throws UsuarioException {
 		Usuario usuario = null;
 		for (Usuario c : listaUsuario) {
 			if (c.getCpf().equals(cpf)) {
@@ -121,5 +134,15 @@ public class SistemaLibrary implements Library {
 			}
 		}
 		return usuario;
+	}
+
+	public boolean isEqualsCpf(Usuario usuario) throws UsuarioException {
+		boolean cpfIgual = false;
+		for (Usuario c : listaUsuario) {
+			if (usuario.getCpf().equals(c.getCpf())) {
+				cpfIgual = true;
+			}
+		}
+		return cpfIgual;
 	}
 }
