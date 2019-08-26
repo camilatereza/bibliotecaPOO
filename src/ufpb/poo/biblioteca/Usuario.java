@@ -9,12 +9,18 @@ public class Usuario extends Pessoa {
 	private String contato;
 	private Endereco end;
 
-	public Usuario(String nome, String cpf, long senha, ArrayList<Livro> locado, String duracao, String conta, Endereco ende) {
+	public Usuario(String nome, String cpf, long senha, ArrayList<Livro> locado, String duracao, String conta,
+			Endereco ende) {
 		super(nome, cpf, senha);
 		this.livroLocado = locado;
 		this.tempoLocado = duracao;
 		this.contato = conta;
 		this.end = ende;
+	}
+
+	public Usuario(String nome, String cpf, long senha) {
+		super(nome, cpf, senha);
+		livroLocado = new ArrayList<Livro>();
 	}
 
 	public ArrayList<Livro> getLivroLocado() {
@@ -47,6 +53,10 @@ public class Usuario extends Pessoa {
 
 	public void setEnd(Endereco end) {
 		this.end = end;
+	}
+	
+	public void devolverLivro(Livro livro) {
+		this.livroLocado.remove(livro);
 	}
 
 }
