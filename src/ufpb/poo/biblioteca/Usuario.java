@@ -1,5 +1,6 @@
 package ufpb.poo.biblioteca;
 
+import java.text.DateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -11,7 +12,7 @@ public class Usuario extends Pessoa {
 	private String contato;
 	private Endereco end;
 
-	public Usuario(String nome, String cpf, long senha, ArrayList<Livro> locado, Date emprestimo, Date devolucao,
+	public Usuario(String nome, String cpf, long senha, ArrayList<Livro> locado, DateFormat emprestimo, Date devolucao,
 			String conta, Endereco ende) {
 		super(nome, cpf, senha);
 		this.livroLocado = locado;
@@ -24,7 +25,7 @@ public class Usuario extends Pessoa {
 	public Usuario(String nome, String cpf, long senha) {
 		super(nome, cpf, senha);
 		livroLocado = new ArrayList<Livro>();
-		dataEmprestimo = new Date();
+		dataEmprestimo = new DateFormat();
 		dataDevolucao = new Date();
 
 	}
@@ -41,7 +42,7 @@ public class Usuario extends Pessoa {
 		return dataEmprestimo;
 	}
 
-	public void setDataEmprestimo(Date dataEmprestimo) {
+	public void setDataEmprestimo(DateFormat dataEmprestimo) {
 		this.dataEmprestimo = dataEmprestimo;
 	}
 
