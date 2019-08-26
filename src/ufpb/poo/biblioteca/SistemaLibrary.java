@@ -1,6 +1,7 @@
 package ufpb.poo.biblioteca;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 import ufpb.poo.biblioteca.exception.*;
 
