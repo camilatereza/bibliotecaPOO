@@ -11,6 +11,13 @@ public class SistemaLibrary implements Library {
 	ArrayList<Funcionario> listaFuncionario;
 	ArrayList<Usuario> listaUsuario;
 
+	public SistemaLibrary() {
+		super();
+		listaLivro = new ArrayList<Livro>();
+		listaFuncionario = new ArrayList<Funcionario>();
+		listaUsuario = new ArrayList<Usuario>();
+	}
+
 	public void efetuarEmprestimo(Livro book, Usuario cliente) throws LivroException {
 		if (book == null || cliente == null)
 			throw new LivroException("Objeto nulo, tente novamente!");
@@ -43,7 +50,7 @@ public class SistemaLibrary implements Library {
 		return livro;
 	}
 
-	public boolean excluirLivro(Livro book) throws LivroException{
+	public boolean excluirLivro(Livro book) throws LivroException {
 		boolean tmp = false;
 		for (Livro l : listaLivro) {
 			if (l.getCodigo().equals(book.getCodigo())) {
@@ -51,7 +58,7 @@ public class SistemaLibrary implements Library {
 				listaLivro.remove(book);
 			}
 		}
-		if(tmp == false)
+		if (tmp == false)
 			throw new LivroException("Livro não encontrado!");
 		return tmp;
 	}
@@ -116,13 +123,15 @@ public class SistemaLibrary implements Library {
 		return logado;
 	}
 
-	public ArrayList<Usuario> buscaUsu(String nome) {
+	public ArrayList<Usuario> buscaUsu(String nome) throws UsuarioException {
 		ArrayList<Usuario> usuariosEncontrados = new ArrayList<Usuario>();
 		for (Usuario c : listaUsuario) {
 			if (c.getNome().equals(nome)) {
 				usuariosEncontrados.add(c);
 			}
 		}
+		if (usuariosEncontrados.size() == 0)
+			throw new UsuarioException("Nenhum usuário encontrado com este nome!");
 		return usuariosEncontrados;
 	}
 
@@ -133,6 +142,8 @@ public class SistemaLibrary implements Library {
 				usuario = c;
 			}
 		}
+		if (usuario == null)
+			throw new UsuarioException("Nenhum usuário encontrado com este cpf!");
 		return usuario;
 	}
 
