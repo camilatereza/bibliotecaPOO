@@ -2,9 +2,7 @@ package testes;
 
 import java.text.DateFormat;
 import java.util.Date;
-
 import javax.swing.JOptionPane;
-
 import ufpb.poo.biblioteca.Funcionario;
 import ufpb.poo.biblioteca.Livro;
 import ufpb.poo.biblioteca.SistemaLibrary;
@@ -75,16 +73,12 @@ public class testeBiblioteca {
 				break;
 				
 			case "7":
-				
-				String hoje = "";
 				Date data = new Date();
-				
 				DateFormat formataData = DateFormat.getDateInstance(); // MOSTRA SÓ A DATA 
 				System.out.println(formataData.format(data));
-				
-				hoje = String.valueOf(data.getTime()); //MOATRA A DATA HORA E DIA DA SEMANA TUDO LOUCO
 				System.out.println(data);
 				break;
+				
 			default:
 				System.out.println("Opção inválida!");
 			}

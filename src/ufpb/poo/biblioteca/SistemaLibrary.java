@@ -1,7 +1,6 @@
 package ufpb.poo.biblioteca;
-import java.util.Date;
-import java.text.DateFormat;
-import java.util.Calendar;
+
+
 import java.util.ArrayList;
 
 import ufpb.poo.biblioteca.exception.*;
@@ -11,6 +10,8 @@ public class SistemaLibrary implements Library {
 	public ArrayList<Livro> listaLivro;
 	public ArrayList<Funcionario> listaFuncionario;
 	public ArrayList<Usuario> listaUsuario;
+	
+	
 
 	public SistemaLibrary() {
 		super();
@@ -22,12 +23,18 @@ public class SistemaLibrary implements Library {
 	public void efetuarEmprestimo(Livro book, Usuario cliente) throws LivroException {
 		if (book == null || cliente == null)
 			throw new LivroException("Objeto nulo, tente novamente!");
-		Calendar c = Calendar.getInstance();
-		Date data = (Date) c.getTime();
-		DateFormat dataEmprestimo = DateFormat.getDateInstance();
-		cliente.setDataEmprestimo(dataEmprestimo);
 		cliente.setLivroLocado(book);
 		book.setDisponivel(false);
+	}
+
+	public boolean verificaCodigo(Livro livro) {
+		boolean encontrou = false;
+		for (Livro l : listaLivro) {
+			if (l.getCodigo().equals(livro.getCodigo()))
+				encontrou = true;
+		}
+
+		return encontrou;
 	}
 
 	public void efetuarDevolucao(Livro book, Usuario cliente) {
