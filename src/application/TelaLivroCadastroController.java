@@ -6,16 +6,14 @@ import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 
-public class TelaPrincipalController implements Initializable {
-	
-	
-	
+public class TelaLivroCadastroController implements Initializable {
 	@FXML
-	private Button cliente,livro,funcionario;
+	private TextField txTitulo,txAutor,txAnoPublicacao,txGenero,txIdioma;
 	@FXML
-	private Label Data;
+	private Button btCadastrar,btVoltar;
+	
 	
 	
 	
@@ -24,5 +22,5 @@ public class TelaPrincipalController implements Initializable {
 		// TODO Auto-generated method stub
 		
 	}
-
+	
 }

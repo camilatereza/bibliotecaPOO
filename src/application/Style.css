@@ -4,3 +4,5 @@
 #funcionario{-fx-background-image:url("funcionario.png");-fx-background-color: #87CEFA;-fx-position:center; -fx-background-repeat:no-repeat;}
 #menu{-fx-background-color: #87CEFA;}
 #bottombar{-fx-background-color: #87CEFA;}
+#devolucao{-fx-background-image:url("livroDevo.png");}
+#emprestimo{-fx-background-image:url("livroEmp.png");}

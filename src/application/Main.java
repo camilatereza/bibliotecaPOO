@@ -8,12 +8,10 @@ import javafx.stage.Stage;
 public class Main extends Application {
 	@Override
 	public void start(Stage Stage) throws Exception {
-		Parent root = FXMLLoader.load(getClass().getResource("Telalogin.fxml"));
-		Parent middle = FXMLLoader.load(getClass().getResource("TelaPrincipal.fxml")); 
+		Parent root = FXMLLoader.load(getClass().getResource("Telalogin.fxml")); 
 		Scene login = new Scene(root);
-		Scene principal = new Scene(middle);
+		Stage.setTitle("BLUEBOOK inc.");
 		Stage.setScene(login);
-		Stage.setScene(principal);
 		Stage.setResizable(false);
 		Stage.show();
 	}

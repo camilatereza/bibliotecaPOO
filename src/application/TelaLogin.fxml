@@ -12,11 +12,11 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="495.0" prefWidth="576.0" style="-fx-background-color: #D3D3D3;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.LoginController">
    <children>
-      <TextField id="usufield" alignment="CENTER" layoutX="113.0" layoutY="229.0" prefHeight="38.0" prefWidth="310.0" promptText="somente os numeros">
+      <TextField id="usufield" fx:id="usuariocampotexto" alignment="CENTER" layoutX="113.0" layoutY="229.0" prefHeight="38.0" prefWidth="310.0" promptText="somente os numeros">
          <font>
             <Font name="Times New Roman" size="19.0" />
          </font></TextField>
-      <PasswordField alignment="CENTER" layoutX="113.0" layoutY="341.0" prefHeight="38.0" prefWidth="310.0">
+      <PasswordField fx:id="senhacampotexto" alignment="CENTER" layoutX="113.0" layoutY="341.0" prefHeight="38.0" prefWidth="310.0">
          <font>
             <Font size="16.0" />
          </font></PasswordField>
@@ -32,18 +32,18 @@
       </Label>
       <Pane layoutX="1.0" prefHeight="138.0" prefWidth="576.0">
          <children>
-            <ImageView fitHeight="145.0" fitWidth="223.0" layoutX="67.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="145.0" fitWidth="223.0" layoutX="14.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@images/lithor.gif" />
+                  <Image url="@lithor.gif" />
                </image></ImageView>
-            <Label layoutX="186.0" layoutY="70.0" prefHeight="46.0" prefWidth="287.0" style="-fx-font-family: algerian; -fx-font-size: 40;" text="BLUEBOOK inc.">
+            <Label layoutX="135.0" layoutY="72.0" prefHeight="46.0" prefWidth="403.0" style="-fx-font-family: algerian; -fx-font-size: 40;" text="BLUEBOOK company.">
                <font>
                   <Font name="Century Schoolbook" size="36.0" />
                </font>
             </Label>
          </children>
       </Pane>
-      <Button alignment="BASELINE_CENTER" layoutX="240.0" layoutY="406.0" mnemonicParsing="false" text="Entrar">
+      <Button fx:id="entrar" alignment="BASELINE_CENTER" layoutX="240.0" layoutY="406.0" mnemonicParsing="false" onAction="#onActionLogin" text="Entrar">
          <font>
             <Font size="14.0" />
          </font>

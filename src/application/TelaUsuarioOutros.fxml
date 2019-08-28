@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TreeTableColumn?>
+<?import javafx.scene.control.TreeTableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<SplitPane dividerPositions="0.5" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="525.0" prefWidth="560.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.TelaUsuarioOutrosController">
+  <items>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+         <children>
+            <Label layoutX="218.0" layoutY="14.0" text="USUARIO">
+               <font>
+                  <Font name="Arial Black" size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="55.0" layoutY="56.0" text="CPF:">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txCpf" disable="true" editable="false" layoutX="101.0" layoutY="51.0" prefHeight="25.0" prefWidth="68.0">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+            </TextField>
+            <Label layoutX="49.0" layoutY="88.0" prefHeight="17.0" prefWidth="40.0" text="Nome:">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txNome" disable="true" editable="false" layoutX="101.0" layoutY="84.0" prefHeight="25.0" prefWidth="406.0">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+            </TextField>
+            <Label layoutX="51.0" layoutY="122.0" text="Logradouro:">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txLogradouro" disable="true" editable="false" layoutX="122.0" layoutY="117.0" prefHeight="25.0" prefWidth="385.0">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+            </TextField>
+            <Label layoutX="51.0" layoutY="156.0" text="Número:">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txNumero" disable="true" editable="false" layoutX="101.0" layoutY="151.0" prefHeight="25.0" prefWidth="40.0">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+            </TextField>
+            <Label layoutX="151.0" layoutY="156.0" text="Bairro:">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txBairro" disable="true" editable="false" layoutX="187.0" layoutY="151.0" prefHeight="25.0" prefWidth="116.0">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+            </TextField>
+            <Label layoutX="50.0" layoutY="190.0" text="Cidade:">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txCidade" disable="true" editable="false" layoutX="92.0" layoutY="185.0" prefHeight="25.0" prefWidth="176.0">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+            </TextField>
+            <Label layoutX="280.0" layoutY="189.0" text="CEP:" />
+            <TextField fx:id="txCep" disable="true" editable="false" layoutX="304.0" layoutY="185.0" prefHeight="25.0" prefWidth="204.0">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+            </TextField>
+            <Button fx:id="btExcluir" layoutX="273.0" layoutY="218.0" mnemonicParsing="false" text="Excluir">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="btAlterar" layoutX="455.0" layoutY="218.0" mnemonicParsing="false" text="Alterar">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="btVoltar" layoutX="61.0" layoutY="218.0" mnemonicParsing="false" text="Voltar">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+            </Button>
+            <Label layoutX="307.0" layoutY="156.0" text="Estado:">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txEstado" disable="true" editable="false" layoutX="348.0" layoutY="151.0" prefHeight="25.0" prefWidth="157.0">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+            </TextField>
+         </children></AnchorPane>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+         <children>
+            <Label layoutX="49.0" layoutY="34.0" prefHeight="17.0" prefWidth="40.0" text="Nome:">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txNomeConsulta" editable="false" layoutX="99.0" layoutY="30.0" prefHeight="25.0" prefWidth="312.0">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+            </TextField>
+            <Label layoutX="56.0" layoutY="66.0" prefHeight="17.0" prefWidth="33.0" text="CPF:">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txCpfConsulta" editable="false" layoutX="99.0" layoutY="62.0" prefHeight="25.0" prefWidth="312.0">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+            </TextField>
+            <Button fx:id="btPesquisaNome" layoutX="424.0" layoutY="31.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="83.0" text="Pesquisar">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="btPesquisaCpf" layoutX="424.0" layoutY="62.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="83.0" text="Pesquisar">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+            </Button>
+            <TreeTableView layoutX="56.0" layoutY="107.0" prefHeight="112.0" prefWidth="451.0">
+              <columns>
+                <TreeTableColumn fx:id="tabelaNome" prefWidth="301.0" resizable="false" text="Nome" />
+                <TreeTableColumn fx:id="tabelaCpf" prefWidth="149.0" resizable="false" text="CPF" />
+              </columns>
+            </TreeTableView>
+         </children></AnchorPane>
+  </items>
+</SplitPane>
