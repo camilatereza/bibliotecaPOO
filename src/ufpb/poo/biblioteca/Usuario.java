@@ -1,6 +1,5 @@
 package ufpb.poo.biblioteca;
 
-
 import java.util.ArrayList;
 
 public class Usuario extends Pessoa {

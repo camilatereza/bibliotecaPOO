@@ -1,40 +1,23 @@
 package testes;
 
-import java.util.Date;
+import com.sun.org.apache.xerces.internal.impl.xpath.regex.ParseException;
+
+import java.util.GregorianCalendar;
 import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 public class Formatando_Datas {
 
 	public static void main(String[] args) throws ParseException {
-//		Calendar c = Calendar.getInstance();
-//		c.set(2019, Calendar.FEBRUARY, 28);
-//		Date data = c.getTime();
-//		System.out.println("Data atual sem formatação: " + data);
-//
-//		// Formata a data
-//		DateFormat formataData = DateFormat.getDateInstance();
-//
-//		String dataAtual = formataData.format(data);
-//		DateFormat dataAtualDate = DateFormat.getDateTimeInstance();	
-//		
-//		System.out.println(dataAtual);
 
-		Calendar c = Calendar.getInstance();
-		Date data = c.getTime();
-		DateFormat f = DateFormat.getDateInstance();
+		// Cria um formatador para a data usando DateFormat:
+		DateFormat df = DateFormat.getDateInstance(DateFormat.MEDIUM);
+		Calendar gc = Calendar.getInstance();
+		System.out.println(df.format(gc.getTime())); // 14/03/2016
 
-		Date data2 = f.parse("12/01/1995");
-		System.out.println(data2);
-
-		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-		
-		// Converte Objetosx
-		String dataAtual = f.format(data);
-		System.out.println("Data convertida:" + sdf.parse(dataAtual));
-		System.out.println(sdf.parse(dataAtual).getClass());
+		// Adiciona 10 dias:
+		gc.add((GregorianCalendar.DAY_OF_MONTH), 10);
+		System.out.println(df.format(gc.getTime())); // 24/03/2016
 	}
 
 }
