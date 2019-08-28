@@ -1,0 +1,6 @@
+#fundo {-fx-background-image:url("lithoropaco.png");-fx-background-size: contain;}
+#cliente{-fx-background-image:url("cliente.png");-fx-background-color: #87CEFA ;-fx-font-family: Impact;-fx-font-size: 19;-fx-background-repeat:no-repeat;-fx-margin-left: 1000px}
+#livro{-fx-background-image:url("livro.png");-fx-background-color: #87CEFA;-fx-margin-left:30px;-fx-background-repeat:no-repeat; }
+#funcionario{-fx-background-image:url("funcionario.png");-fx-background-color: #87CEFA;-fx-position:center; -fx-background-repeat:no-repeat;}
+#menu{-fx-background-color: #87CEFA;}
+#bottombar{-fx-background-color: #87CEFA;}
