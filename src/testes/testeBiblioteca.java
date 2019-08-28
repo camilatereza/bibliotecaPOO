@@ -22,20 +22,25 @@ public class testeBiblioteca {
 							+ "3 - Cadastrar Funcionário \n" + "4 - Efetuar empréstimo \n" + "5 - Devolver livro");
 
 			switch (opcao) {
+			
 			// Livro(String codigo, int ano, int genero, int idioma, String titulo, String
 			// autor, boolean disponivel,
 			// int quantidade)
+			
 			case "2":
 				Livro objLivro = new Livro();
-
-				Calendar hoje = Calendar.getInstance();
-				objLivro.setDataEmprestimo(hoje);
-				System.out.println(objLivro.getDataEmprestimo().getTime());
 				
-				objLivro.gerarDataDevolucao();
-				System.out.println(objLivro.getDataDevolucao().getTime());
+				Calendar dia_do_emprestimo = Calendar.getInstance();
+				Datas today = new Datas();
 				
-				System.out.println(objLivro.getDataEmprestimo().getTime());
+				objLivro.setDias(today);
+				today.setDataEmprestimo(dia_do_emprestimo);
+				System.out.println(objLivro.getDias().getDataEmprestimo().getTime());
+				
+				today.gerarData_de_entrega();
+				System.out.println(objLivro.getDias().getData_prevista_entrega().getTime());
+				System.out.println(objLivro.getDias().getDataEmprestimo().getTime());
+				
 				
 				
 				
