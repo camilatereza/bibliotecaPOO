@@ -2,6 +2,11 @@ package ufpb.poo.biblioteca.exception;
 
 public class UsuarioException extends Exception{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	public UsuarioException() {
 		super();
 		// TODO Auto-generated constructor stub

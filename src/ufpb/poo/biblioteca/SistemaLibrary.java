@@ -1,15 +1,17 @@
 package ufpb.poo.biblioteca;
 
-import java.lang.invoke.LambdaConversionException;
+
 import java.util.ArrayList;
 
 import ufpb.poo.biblioteca.exception.*;
 
 public class SistemaLibrary implements Library {
 
-	ArrayList<Livro> listaLivro;
-	ArrayList<Funcionario> listaFuncionario;
-	ArrayList<Usuario> listaUsuario;
+	public ArrayList<Livro> listaLivro;
+	public ArrayList<Funcionario> listaFuncionario;
+	public ArrayList<Usuario> listaUsuario;
+	
+	
 
 	public SistemaLibrary() {
 		super();
@@ -25,8 +27,18 @@ public class SistemaLibrary implements Library {
 		book.setDisponivel(false);
 	}
 
+	public boolean verificaCodigo(Livro livro) {
+		boolean encontrou = false;
+		for (Livro l : listaLivro) {
+			if (l.getCodigo().equals(livro.getCodigo()))
+				encontrou = true;
+		}
+
+		return encontrou;
+	}
+
 	public void efetuarDevolucao(Livro book, Usuario cliente) {
-		cliente.setLivroLocado(book);
+		cliente.devolverLivro(book);
 		book.setDisponivel(true);
 	}
 

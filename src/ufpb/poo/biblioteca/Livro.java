@@ -1,6 +1,5 @@
 package ufpb.poo.biblioteca;
 
-import java.math.MathContext;
 import java.util.Random;
 
 public class Livro {
