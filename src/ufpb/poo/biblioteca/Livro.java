@@ -1,9 +1,6 @@
 package ufpb.poo.biblioteca;
 
 import java.util.Random;
-import java.util.GregorianCalendar;
-import java.text.DateFormat;
-import java.util.Calendar;
 
 public class Livro {
 
@@ -15,9 +12,7 @@ public class Livro {
 	private String autor;
 	private boolean disponivel;
 	private int quantidadeDeLivros;
-	private Calendar dataDevolucao;
-	private Calendar dataEmprestimo;
-	private final int quantidadeDias = 15;
+	private Datas dias;
 
 	public Livro(int ano, int genero, int idioma, String titulo, String autor, boolean disponivel, int quantidade) {
 		super();
@@ -29,29 +24,11 @@ public class Livro {
 		this.autor = autor;
 		this.disponivel = disponivel;
 		this.quantidadeDeLivros = quantidade;
-		this.dataEmprestimo = null;
-		this.dataDevolucao = null;
+		this.dias = new Datas();
 	}
 
 	public Livro() {
 		super();
-	}
-	
-	public void gerarDataDevolucao() {
-
-		Calendar diaDoAluguel = this.dataEmprestimo;
-		
-		diaDoAluguel.add((GregorianCalendar.DAY_OF_MONTH), this.quantidadeDias);
-
-		this.dataDevolucao = diaDoAluguel;
-	}
-
-	public boolean gerarMulta(Calendar diaDaEntrega) {
-
-		if (diaDaEntrega.after(this.dataDevolucao)) { // Se o dia da entrega for depois que o dia que era pra devolver
-			return true;
-		}
-		return false;
 	}
 
 	public String gerarCodigo(int gen, int idioma, int anoo) {
@@ -123,30 +100,22 @@ public class Livro {
 		this.disponivel = disponivel;
 	}
 
-	public int getquantLivros() {
+	public int getQuantidadeDeLivros() {
 		return quantidadeDeLivros;
 	}
 
-	public void setquantLivros(int quantLivros) {
-		this.quantidadeDeLivros = quantLivros;
+	public void setQuantidadeDeLivros(int quantidadeDeLivros) {
+		this.quantidadeDeLivros = quantidadeDeLivros;
 	}
 
-	public Calendar getDataEmprestimo() {
-		return dataEmprestimo;
+	public Datas getDias() {
+		return dias;
 	}
 
-	public void setDataEmprestimo(Calendar dataEmprestimo) {
-		this.dataEmprestimo = dataEmprestimo;
+	public void setDias(Datas dias) {
+		this.dias = dias;
 	}
 
-	public Calendar getDataDevolucao() {
-		return dataDevolucao;
-	}
-
-	public int getQuantidadeDias() {
-		return quantidadeDias;
-	}
-	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -154,7 +123,7 @@ public class Livro {
 		result = prime * result + ((codigo == null) ? 0 : codigo.hashCode());
 		return result;
 	}
-	
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -175,7 +144,8 @@ public class Livro {
 	@Override
 	public String toString() {
 		return "Livro [codigo=" + codigo + ", ano=" + ano + ", genero=" + genero + ", idioma=" + idioma + ", titulo="
-				+ titulo + ", autor=" + autor + ", disponivel=" + disponivel + ", quantidade=" + quantidadeDeLivros + "]";
+				+ titulo + ", autor=" + autor + ", disponivel=" + disponivel + ", quantidadeDeLivros="
+				+ quantidadeDeLivros + "]";
 	}
 
 }
