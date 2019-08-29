@@ -24,15 +24,21 @@ public class Formatando_Datas {
 //		// Adiciona 10 dias:
 //		gc.add((GregorianCalendar.DAY_OF_MONTH), 10);
 //		System.out.println(df.format(gc.getTime())); // 24/03/2016
+		
+		
+		
 
 //		DateFormat df = DateFormat.getDateInstance(DateFormat.MEDIUM);
 		Calendar gc = Calendar.getInstance();
 		Calendar gf = Calendar.getInstance();
+		
 		gc.add((GregorianCalendar.DAY_OF_MONTH), 4);
 		System.out.println(gc.getTime());
 		System.out.println(gf.getTime());
+		
 		data_prevista_entrega = gc;
 		data_da_devolucao = gf;
+		
 		if (vaiTerMulta()) {
 			int diasAtrasado = 0;
 			double multa = 0;
@@ -40,10 +46,12 @@ public class Formatando_Datas {
 			int outroDia = data_prevista_entrega.getTime().getDate();
 			int mes = data_da_devolucao.getTime().getMonth() + 1;
 			int outroMes = data_prevista_entrega.getTime().getMonth() + 1;
+			
 			System.out.println("1 dia: " + dia);
 			System.out.println("2 dia: " + outroDia);
 			System.out.println("1 mes:" + mes);
 			System.out.println("2 mes:" + outroMes);
+			
 			if (mes != outroMes) {
 				diasAtrasado = (data_da_devolucao.getActualMaximum(Calendar.DAY_OF_MONTH) - dia) + outroDia;
 				multa = diasAtrasado * 1.30;

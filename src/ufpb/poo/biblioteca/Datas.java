@@ -4,12 +4,12 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 
 public class Datas {
-	
+
 	private Calendar data_prevista_entrega;
 	private Calendar dataEmprestimo;
 	private Calendar data_da_devolucao;
 	private final int quantidadeDias = 15;
-	
+
 	public Datas() {
 		super();
 		this.data_prevista_entrega = null;
@@ -18,23 +18,38 @@ public class Datas {
 	}
 
 	public void gerarData_de_entrega() {
-		
+
 		dataEmprestimo.add((GregorianCalendar.DAY_OF_MONTH), this.quantidadeDias);
 		this.data_prevista_entrega = dataEmprestimo;
-		
+
 		dataEmprestimo = Calendar.getInstance();
 	}
 
 	public boolean vaiTerMulta() {
 
-		if (data_prevista_entrega.after(this.data_da_devolucao)) { // Se o dia da entrega for depois que o dia que a pessoa está devolvendo
+		if (data_prevista_entrega.after(this.data_da_devolucao)) { // Se o dia da entrega for depois que o dia que a
+																	// pessoa está devolvendo
 			return true;
 		}
 		return false;
 	}
-	
+
 	public double gerarMulta() {
-		return 0.0;
+
+		int dia_De_Atraso = 0;
+
+		int dataQueDevolveu = data_da_devolucao.getTime().getDate();
+		int dataPrevistaPraEntregar = data_prevista_entrega.getTime().getDate();
+		int mes_Da_Entrega = data_da_devolucao.getTime().getMonth();
+		int mes_queDeveria_Entregar = data_prevista_entrega.getTime().getMonth();
+
+		if (mes_Da_Entrega != mes_queDeveria_Entregar) {
+			dia_De_Atraso = (data_da_devolucao.getActualMaximum(Calendar.DAY_OF_MONTH) - dataQueDevolveu) + dataPrevistaPraEntregar;
+		} else {
+			dia_De_Atraso = Math.abs(dataQueDevolveu - dataPrevistaPraEntregar);
+		}
+		
+		return dia_De_Atraso * 1.30;
 	}
 
 	public Calendar getData_prevista_entrega() {
