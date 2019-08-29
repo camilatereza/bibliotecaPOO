@@ -8,8 +8,6 @@ public class SistemaLibrary implements Library {
 	public ArrayList<Livro> listaLivro;
 	public ArrayList<Funcionario> listaFuncionario;
 	public ArrayList<Usuario> listaUsuario;
-	
-	
 
 	public SistemaLibrary() {
 		super();
@@ -27,11 +25,9 @@ public class SistemaLibrary implements Library {
 
 	public boolean verificaCodigo(Livro livro) {
 		boolean encontrou = false;
-		for (Livro l : listaLivro) {
+		for (Livro l : listaLivro)
 			if (l.getCodigo().equals(livro.getCodigo()))
 				encontrou = true;
-		}
-
 		return encontrou;
 	}
 
@@ -75,11 +71,9 @@ public class SistemaLibrary implements Library {
 
 	public Usuario consultarUsuario(Usuario cliente) throws UsuarioException {
 		Usuario usuario = null;
-		for (Usuario u : listaUsuario) {
-			if (u.getCpf().equals(cliente.getCpf())) {
+		for (Usuario u : listaUsuario)
+			if (u.getCpf().equals(cliente.getCpf()))
 				usuario = u;
-			}
-		}
 		if (usuario == null)
 			throw new UsuarioException("Usuário não encontrado");
 		return usuario;
@@ -125,21 +119,17 @@ public class SistemaLibrary implements Library {
 	@Override
 	public boolean verificarLogin(Funcionario funcionario) {
 		boolean logado = false;
-		for (Funcionario f : this.listaFuncionario) {
-			if (f.equals(funcionario)) {
+		for (Funcionario f : this.listaFuncionario)
+			if (f.equals(funcionario))
 				logado = true;
-			}
-		}
 		return logado;
 	}
 
 	public ArrayList<Usuario> buscaUsu(String nome) throws UsuarioException {
 		ArrayList<Usuario> usuariosEncontrados = new ArrayList<Usuario>();
-		for (Usuario c : listaUsuario) {
-			if (c.getNome().equals(nome)) {
+		for (Usuario c : listaUsuario)
+			if (c.getNome().equals(nome))
 				usuariosEncontrados.add(c);
-			}
-		}
 		if (usuariosEncontrados.size() == 0)
 			throw new UsuarioException("Nenhum usuário encontrado com este nome!");
 		return usuariosEncontrados;
@@ -147,11 +137,9 @@ public class SistemaLibrary implements Library {
 
 	public Usuario buscaCpf(String cpf) throws UsuarioException {
 		Usuario usuario = null;
-		for (Usuario c : listaUsuario) {
-			if (c.getCpf().equals(cpf)) {
+		for (Usuario c : listaUsuario)
+			if (c.getCpf().equals(cpf))
 				usuario = c;
-			}
-		}
 		if (usuario == null)
 			throw new UsuarioException("Nenhum usuário encontrado com este cpf!");
 		return usuario;
@@ -159,11 +147,9 @@ public class SistemaLibrary implements Library {
 
 	public boolean isEqualsCpf(Usuario usuario) throws UsuarioException {
 		boolean cpfIgual = false;
-		for (Usuario c : listaUsuario) {
-			if (usuario.getCpf().equals(c.getCpf())) {
+		for (Usuario c : listaUsuario)
+			if (usuario.getCpf().equals(c.getCpf()))
 				cpfIgual = true;
-			}
-		}
 		return cpfIgual;
 	}
 }

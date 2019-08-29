@@ -31,15 +31,15 @@ public class Livro {
 		super();
 	}
 
-	public String gerarCodigo(int gen, int idioma, int anoo) {
+	private String gerarCodigo(int gen, int idioma, int ano) {
 
 		Random random = new Random();
 		String cod = null;
-		String genero = Integer.toString(gen);
-		String lingua = Integer.toString(idioma);
-		String ano = Integer.toString(anoo);
+		this.genero = gen;
+		this.idioma = idioma;
+		this.ano = ano;
 		String dif = String.valueOf(random.nextInt(10000));
-		cod = genero + lingua + ano + "." + dif;
+		cod = this.genero + this.idioma + this.ano + "." + dif;
 
 		return cod;
 	}

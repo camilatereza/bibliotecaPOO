@@ -25,12 +25,16 @@ public class Datas {
 		dataEmprestimo = Calendar.getInstance();
 	}
 
-	public boolean gerarMulta() {
+	public boolean vaiTerMulta() {
 
 		if (data_prevista_entrega.after(this.data_da_devolucao)) { // Se o dia da entrega for depois que o dia que a pessoa está devolvendo
 			return true;
 		}
 		return false;
+	}
+	
+	public double gerarMulta() {
+		return 0.0;
 	}
 
 	public Calendar getData_prevista_entrega() {
