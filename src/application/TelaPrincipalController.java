@@ -13,15 +13,27 @@ public class TelaPrincipalController implements Initializable {
 	
 	
 	@FXML
-	private Button cliente,livro,funcionario;
+	private Button btcliente,btlivro,btfuncionario,btemprestimo,btdevolucao;
 	@FXML
-	private Label Data;
+	private Label lblData;
 	
+	protected void IrParaUsuario () {
+		Main.MudarTela("TelaClienteOutros");
+	}
 	
+	protected void IrParaLivro () {
+		Main.MudarTela("TelaClienteOutros");
+	}
 	
+	protected void IrParaFuncionario () {
+		Main.MudarTela("TelaUsuarioOutros");
+	}
+	
+	protected void voltarParaPrincipal () {
+		Main.MudarTela("TelaPrincipal");
+	}
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		// TODO Auto-generated method stub
 		
 	}
 

@@ -14,9 +14,7 @@ public class TelaUsuarioOutrosController implements Initializable {
 	private TextField txCpf,txNome,txLogradouro,txNumero,txBairro,txCidade,txEstado,txCep,txNomeConsulta,txCpfConsulta;
 	@FXML
 	private Button btVoltar,btExcluir,btAlterar,btPesquisaNome,btPesquisaCpf;
-	@FXML
-	private TreeTableColumn<TelaUsuarioOutrosController,String> tabelaNome,tabelaCpf;
-	
+		
 	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {

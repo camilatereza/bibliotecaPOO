@@ -43,7 +43,7 @@
             </Label>
          </children>
       </Pane>
-      <Button fx:id="entrar" alignment="BASELINE_CENTER" layoutX="240.0" layoutY="406.0" mnemonicParsing="false" onAction="#onActionLogin" text="Entrar">
+      <Button fx:id="entrar" alignment="BASELINE_CENTER" layoutX="240.0" layoutY="406.0" mnemonicParsing="false" onAction="#OnActionLogin" text="Entrar">
          <font>
             <Font size="14.0" />
          </font>
