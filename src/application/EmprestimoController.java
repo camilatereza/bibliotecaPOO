@@ -9,21 +9,19 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 
-public class TelaLivroCadastroController implements Initializable {
+public class EmprestimoController implements Initializable {
+
 	@FXML
-	private TextField txTitulo,txAutor,txAnoPublicacao,txGenero,txIdioma;
+	private TextField txNome,txCpf,txCodigo,txTitulo,txAutor;
 	@FXML
-	private Button btCadastrar,btVoltar;
-	
-	
+	private Button btVoltar,btEmprestar;
 	
 	@FXML protected void voltarParaPrincipal (ActionEvent e) {
 		Main.MudarTela("principal");
 	}
 	
 	
-	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {}
-	
+
 }

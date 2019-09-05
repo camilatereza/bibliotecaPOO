@@ -15,10 +15,17 @@ public class TelaUsuarioCadastroController implements Initializable{
 	private Button btVoltar,btCadastrar;
 	
 	
-	@Override
-	public void initialize(URL location, ResourceBundle resources) {
-		// TODO Auto-generated method stub
-		
+	
+	@FXML protected void voltarParaPrincipal () {
+		Main.MudarTela("principal");
 	}
+	
+	
+	
+	
+	
+	
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {}
 	
 }

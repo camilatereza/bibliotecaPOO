@@ -12,6 +12,7 @@ public class Livro {
 	private String autor;
 	private boolean disponivel;
 	private int quantidadeDeLivros;
+
 	private Datas dias;
 
 	public Livro(int ano, int genero, int idioma, String titulo, String autor, boolean disponivel, int quantidade) {
