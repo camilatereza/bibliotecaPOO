@@ -9,19 +9,22 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TreeTableColumn;
 
-public class TelaUsuarioOutrosController implements Initializable {
+public class TelaUsuarioOutrosController<GroupTreeObject> implements Initializable {
 	@FXML
 	private TextField txCpf,txNome,txLogradouro,txNumero,txBairro,txCidade,txEstado,txCep,txNomeConsulta,txCpfConsulta;
 	@FXML
 	private Button btVoltar,btExcluir,btAlterar,btPesquisaNome,btPesquisaCpf;
-	@FXML
-	private TreeTableColumn<TelaUsuarioOutrosController,String> tabelaNome,tabelaCpf;
+	
+	
+	
+	
+	@FXML protected void voltarParaPrincipal () {
+		Main.MudarTela("principal");
+	}
+	
 	
 	
 	@Override
-	public void initialize(URL location, ResourceBundle resources) {
-		// TODO Auto-generated method stub
-		
-	}
+	public void initialize(URL location, ResourceBundle resources) {}
 
 }

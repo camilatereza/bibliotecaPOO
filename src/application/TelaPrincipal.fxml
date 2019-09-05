@@ -6,51 +6,49 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ToolBar?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
 
-<Pane id="fundo" fx:id="fundo" accessibleRole="TEXT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="483.0" prefWidth="600.0" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.TelaPrincipalController">
+<Pane id="fundo" fx:id="fundo" accessibleRole="TEXT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="554.0" prefWidth="705.0" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.TelaPrincipalController">
    <children>
-      <Pane id="bottombar" layoutY="448.0" prefHeight="46.0" prefWidth="606.0" stylesheets="@Style.css">
+      <Pane layoutY="519.0" prefHeight="35.0" prefWidth="712.0" style="-fx-background-color: #DCDCDC;">
          <children>
-            <Label layoutX="488.0" layoutY="12.0" text="DD/MM/AAAA" />
+            <Label fx:id="lblData" layoutX="610.0" layoutY="7.0" prefHeight="25.0" prefWidth="94.0" text="DD/MM/AAAA">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Label>
          </children></Pane>
-      <ToolBar id="menu" prefHeight="68.0" prefWidth="612.0" stylesheets="@Style.css">
-         <padding>
-            <Insets left="125.0" />
-         </padding>
+      <ToolBar prefHeight="36.0" prefWidth="712.0">
          <items>
-            <Button id="cliente" accessibleRole="TEXT" accessibleText="Clientes" contentDisplay="GRAPHIC_ONLY" depthTest="ENABLE" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="62.0" prefWidth="85.0" styleClass="butao" stylesheets="@Style.css" text="Cliente" textAlignment="JUSTIFY" textOverrun="CLIP">
+            <Button accessibleRole="TEXT" accessibleText="Clientes" alignment="BASELINE_CENTER" contentDisplay="TEXT_ONLY" depthTest="ENABLE" graphicTextGap="0.0" mnemonicParsing="false" onAction="#IrParaUsuario" prefHeight="41.0" prefWidth="133.0" style="-fx-font-family: Impact; -fx-font-size: 19;" text="Cliente" textAlignment="JUSTIFY" textOverrun="CLIP">
                <cursor>
-                  <Cursor fx:constant="TEXT" />
+                  <Cursor fx:constant="HAND" />
                </cursor>
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
-               <padding>
-                  <Insets right="125.0" />
-               </padding>
             </Button>
-          <Button id="livro" accessibleRole="TEXT" accessibleText="Clientes" contentDisplay="GRAPHIC_ONLY" depthTest="ENABLE" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="62.0" prefWidth="85.0" style="-fx-font-family: Impact; -fx-font-size: 19;" stylesheets="@Style.css" text="Livro" textAlignment="CENTER">
+          <Button accessibleRole="TEXT" accessibleText="Clientes" alignment="CENTER" contentDisplay="CENTER" depthTest="ENABLE" graphicTextGap="0.0" mnemonicParsing="false" onAction="#IrParaLivro" prefHeight="41.0" prefWidth="114.0" style="-fx-font-family: Impact; -fx-font-size: 19;" text="Livro" textAlignment="CENTER" textOverrun="CLIP">
                <cursor>
-                  <Cursor fx:constant="TEXT" />
+                  <Cursor fx:constant="HAND" />
                </cursor>
-               <padding>
-                  <Insets right="125.0" />
-               </padding>
             </Button>
-            <Button id="funcionario" accessibleRole="TEXT" accessibleText="Clientes" contentDisplay="GRAPHIC_ONLY" depthTest="ENABLE" ellipsisString="" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="62.0" prefWidth="85.0" style="-fx-font-family: Impact; -fx-font-size: 19;" styleClass="butao" stylesheets="@Style.css" text="Funcionario" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS">
+            <Button accessibleRole="TEXT" accessibleText="Clientes" alignment="CENTER" contentDisplay="CENTER" depthTest="ENABLE" ellipsisString="" graphicTextGap="0.0" mnemonicParsing="false" onAction="#IrParaFuncionario" prefHeight="39.0" prefWidth="124.0" style="-fx-font-family: Impact; -fx-font-size: 19;" text="Funcionario" textAlignment="CENTER" textOverrun="CLIP">
                <cursor>
-                  <Cursor fx:constant="TEXT" />
+                  <Cursor fx:constant="HAND" />
                </cursor>
                <opaqueInsets>
-                  <Insets left="300.0" right="300.0" />
+                  <Insets />
                </opaqueInsets>
-               <padding>
-                  <Insets left="30.0" />
-               </padding>
             </Button>
          </items>
       </ToolBar>
-      <Button id="devolucao" contentDisplay="GRAPHIC_ONLY" layoutX="416.0" layoutY="128.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="123.0" stylesheets="@Style.css" text="Button" />
-      <Button id="emprestimo" layoutX="55.0" layoutY="128.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="123.0" stylesheets="@Style.css" />
+      <Button id="devolucao" fx:id="btdevolucao" alignment="CENTER" contentDisplay="CENTER" layoutX="470.0" layoutY="181.0" mnemonicParsing="false" prefHeight="103.0" prefWidth="174.0" style="-fx-font-family: Impact; -fx-font-size: 24;" stylesheets="@Style.css" text="DEVOLUÇÃO">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="38.0" layoutY="181.0" mnemonicParsing="false" prefHeight="103.0" prefWidth="174.0" style="-fx-font-family: Impact; -fx-font-size: 24;" text="EMPRESTIMO">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
    </children>
 </Pane>
