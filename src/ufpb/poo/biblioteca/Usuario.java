@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Usuario extends Pessoa {
 
-	private ArrayList<Livro> livroLocado;
+	private ArrayList<Livro> livroLocado; // para identificar com quais livros cada cliente esta
 	private String contato;
 	private Endereco end;
 
@@ -19,7 +19,7 @@ public class Usuario extends Pessoa {
 		super(nome, cpf, senha);
 		livroLocado = new ArrayList<Livro>();
 	}
-
+	
 	public ArrayList<Livro> getLivroLocado() {
 		return livroLocado;
 	}
@@ -47,9 +47,5 @@ public class Usuario extends Pessoa {
 	public void setEnd(Endereco end) {
 		this.end = end;
 	}
-
-	public void devolverLivro(Livro livro) {
-		this.livroLocado.remove(livro);
-	}
-
+	
 }

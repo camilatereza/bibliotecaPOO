@@ -1,5 +1,6 @@
 package ufpb.poo.biblioteca;
 
+import java.util.Calendar;
 import java.util.Random;
 
 public class Livro {
@@ -31,6 +32,11 @@ public class Livro {
 		super();
 	}
 
+	//o codigo é numerico e usa os enum para gerar um codigo diferente para cada livro;
+	//o primeiro digito do codigo indica o genero do livro, de acordo com o indice da lista de enum
+	//o segundo digito indica o idioma de acordo com indice do enum
+	//os dois ultimos numeros antes da virgula indicam o ano de lançamento do livro
+	// por fim o numero após a virgula é um randomico para diferenciar todos os livros
 	private String gerarCodigo(int gen, int idioma, int ano) {
 
 		Random random = new Random();
@@ -112,8 +118,14 @@ public class Livro {
 		return dias;
 	}
 
-	public void setDias(Datas dias) {
-		this.dias = dias;
+	// para enviar o dia que o livro foi alugado
+	public void setDiasEmprestimo(Calendar diaEmprestimo) {
+		this.dias.setDataEmprestimo(diaEmprestimo);
+	}
+	
+	//para enviar o dia que o livro foi devolvido
+	public void setDiasDevolucao(Calendar diaDevolcao) {
+		this.dias.setData_da_devolucao(diaDevolcao);
 	}
 
 	@Override

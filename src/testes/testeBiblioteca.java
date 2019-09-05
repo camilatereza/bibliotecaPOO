@@ -3,11 +3,16 @@ package testes;
 import java.text.DateFormat;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.GregorianCalendar;
 
 import javax.swing.JOptionPane;
-import ufpb.poo.biblioteca.*;
-import ufpb.poo.biblioteca.exception.*;
+
+import ufpb.poo.biblioteca.Datas;
+import ufpb.poo.biblioteca.Funcionario;
+import ufpb.poo.biblioteca.Livro;
+import ufpb.poo.biblioteca.SistemaLibrary;
+import ufpb.poo.biblioteca.Usuario;
+import ufpb.poo.biblioteca.exception.FuncionarioException;
+import ufpb.poo.biblioteca.exception.UsuarioException;
 
 public class testeBiblioteca {
 
@@ -31,13 +36,12 @@ public class testeBiblioteca {
 				Livro objLivro = new Livro();
 				
 				Calendar dia_do_emprestimo = Calendar.getInstance();
-				Datas today = new Datas();
+				Calendar today = Calendar.getInstance();
 				
-				objLivro.setDias(today);
-				today.setDataEmprestimo(dia_do_emprestimo);
+				objLivro.setDiasEmprestimo(today);
 				System.out.println(objLivro.getDias().getDataEmprestimo().getTime());
 				
-				today.gerarData_de_entrega();
+				objLivro.getDias().gerarData_de_entrega();
 				System.out.println(objLivro.getDias().getData_prevista_entrega().getTime());
 				System.out.println(objLivro.getDias().getDataEmprestimo().getTime());
 				
@@ -61,7 +65,11 @@ public class testeBiblioteca {
 				break;
 			case "3":
 				Funcionario objFuncionario = new Funcionario("Marcos", "123456", 1234);
-				sistema.cadastrarFuncionario(objFuncionario);
+				try {
+					sistema.cadastrarFuncionario(objFuncionario);
+				} catch (FuncionarioException e) {
+					System.out.println(e.getMessage());
+				}
 				System.out.println("Tudo certo!!");
 				System.out.println(sistema.listaUsuario);
 				break;

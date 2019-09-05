@@ -16,13 +16,6 @@ public class SistemaLibrary implements Library {
 		listaUsuario = new ArrayList<Usuario>();
 	}
 
-	public void efetuarEmprestimo(Livro book, Usuario cliente) throws LivroException {
-		if (book == null || cliente == null)
-			throw new LivroException("Objeto nulo, tente novamente!");
-		cliente.setLivroLocado(book);
-		book.setDisponivel(false);
-	}
-
 	public boolean verificaCodigo(Livro livro) {
 		boolean encontrou = false;
 		for (Livro l : listaLivro)
@@ -31,19 +24,19 @@ public class SistemaLibrary implements Library {
 		return encontrou;
 	}
 
-	public void efetuarDevolucao(Livro book, Usuario cliente) {
-		cliente.devolverLivro(book);
-		book.setDisponivel(true);
-	}
-
 	public void cadastrarLivro(Livro book) {
 		listaLivro.add(book);
 	}
 
+	//a exception é lançada caso algum atibuto do livro não tenha sido informado
 	public Livro alterarLivro(Livro book) throws LivroException {
+		if (book == null){
+			throw new LivroException("Livro inválido");
+		}
 		return this.buscaLivro(book);
 	}
 
+	//exception lançada caso o livro não exista na biblioteca
 	public Livro buscaLivro(Livro book) throws LivroException {
 		Livro livro = null;
 		for (Livro l : listaLivro) {
@@ -56,7 +49,7 @@ public class SistemaLibrary implements Library {
 		return livro;
 	}
 
-	public boolean excluirLivro(Livro book) throws LivroException {
+	public boolean removerLivro(Livro book) throws LivroException {
 		boolean tmp = false;
 		for (Livro l : listaLivro) {
 			if (l.getCodigo().equals(book.getCodigo())) {
@@ -64,11 +57,13 @@ public class SistemaLibrary implements Library {
 				listaLivro.remove(book);
 			}
 		}
-		if (tmp == false)
+		if (tmp == false) {
 			throw new LivroException("Livro não encontrado!");
+		}
 		return tmp;
 	}
 
+	//gera a exception se o usuario não existir
 	public Usuario consultarUsuario(Usuario cliente) throws UsuarioException {
 		Usuario usuario = null;
 		for (Usuario u : listaUsuario)
@@ -79,17 +74,22 @@ public class SistemaLibrary implements Library {
 		return usuario;
 	}
 
+	//retorna a exception se existir um funcionario já cadastrado com o cpf informado
 	public void cadastrarUsuario(Usuario cliente) throws UsuarioException {
-		if (isEqualsCpf(cliente))
+		if (isEqualsCpfUsu(cliente)) {
 			throw new UsuarioException("Usuário já existe!");
+		}
 		listaUsuario.add(cliente);
 	}
 
 	public Usuario alterarUsuario(Usuario cliente) throws UsuarioException {
+		if(cliente == null) {
+			throw new UsuarioException("Usuario inválido");
+		}
 		return this.consultarUsuario(cliente);
 	}
 
-	public boolean excluirUsuario(Usuario cliente) {
+	public boolean removerUsuario(Usuario cliente) throws UsuarioException{
 		boolean tmp = false;
 		for (Usuario c : listaUsuario) {
 			if (c.getCpf().equals(cliente.getCpf())) {
@@ -97,11 +97,18 @@ public class SistemaLibrary implements Library {
 				listaUsuario.remove(cliente);
 			}
 		}
+		if (tmp == false) {
+			throw new UsuarioException("Usuario não encontrado!");
+		}
 		return tmp;
 	}
 
+	//retorna a exception se existir um funcionario já cadastrado com o cpf informado
 	@Override
-	public void cadastrarFuncionario(Funcionario fun) {
+	public void cadastrarFuncionario(Funcionario fun) throws FuncionarioException {
+		if (isEqualsCpfFun(fun)) {
+			throw new FuncionarioException("Funcionario já existe!");
+		}
 		this.listaFuncionario.add(fun);
 	}
 
@@ -145,10 +152,20 @@ public class SistemaLibrary implements Library {
 		return usuario;
 	}
 
-	public boolean isEqualsCpf(Usuario usuario) throws UsuarioException {
+	//verifica se existe um outro Usuario com o mesmo CPF que o informado
+	public boolean isEqualsCpfUsu(Usuario usuario) {
 		boolean cpfIgual = false;
 		for (Usuario c : listaUsuario)
 			if (usuario.getCpf().equals(c.getCpf()))
+				cpfIgual = true;
+		return cpfIgual;
+	}
+	
+	//verifica se existe um outro Funcionario com o mesmo CPF que o informado
+	public boolean isEqualsCpfFun(Funcionario funcionario) {
+		boolean cpfIgual = false;
+		for (Usuario c : listaUsuario)
+			if (funcionario.getCpf().equals(c.getCpf()))
 				cpfIgual = true;
 		return cpfIgual;
 	}

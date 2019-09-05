@@ -34,6 +34,7 @@ public class Datas {
 		return false;
 	}
 
+	@SuppressWarnings("deprecation")
 	public double gerarMulta() {
 
 		int dia_De_Atraso = 0;
