@@ -6,6 +6,7 @@ import java.util.Date;
 
 import javax.swing.JOptionPane;
 
+import connections.dao.LivroDAO;
 import ufpb.poo.biblioteca.Datas;
 import ufpb.poo.biblioteca.Funcionario;
 import ufpb.poo.biblioteca.Livro;
@@ -33,17 +34,12 @@ public class testeBiblioteca {
 			// int quantidade)
 			
 			case "2":
-				Livro objLivro = new Livro();
 				
-				Calendar dia_do_emprestimo = Calendar.getInstance();
-				Calendar today = Calendar.getInstance();
+				Livro objLivro1 = new Livro(2019, 1, 2, "segundo livro", "Camila", true, 2);
 				
-				objLivro.setDiasEmprestimo(today);
-				System.out.println(objLivro.getDias().getDataEmprestimo().getTime());
+				LivroDAO objDao = new LivroDAO();
+				objDao.cadastrarLivro(objLivro1);
 				
-				objLivro.getDias().gerarData_de_entrega();
-				System.out.println(objLivro.getDias().getData_prevista_entrega().getTime());
-				System.out.println(objLivro.getDias().getDataEmprestimo().getTime());
 				
 				
 				
@@ -61,7 +57,7 @@ public class testeBiblioteca {
 					System.out.println(ex.getMessage());
 				}
 				System.out.println("Tudo certo!!");
-				System.out.println(sistema.listaUsuario);
+//				System.out.println(sistema.listaUsuario);
 				break;
 			case "3":
 				Funcionario objFuncionario = new Funcionario("Marcos", "123456", 1234);
@@ -71,7 +67,7 @@ public class testeBiblioteca {
 					System.out.println(e.getMessage());
 				}
 				System.out.println("Tudo certo!!");
-				System.out.println(sistema.listaUsuario);
+//				System.out.println(sistema.listaUsuario);
 				break;
 //			case "4":
 //				Livro objLivro1 = new Livro("123", 2014, 5, 2, "O genio", "Geiseel", 2);

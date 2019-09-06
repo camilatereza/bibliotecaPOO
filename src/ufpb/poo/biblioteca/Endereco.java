@@ -9,6 +9,11 @@ public class Endereco {
 	private String cidade;
 	private String cep;
 
+	public Endereco() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
 	public Endereco(String logradouro, String numero, String bairro, String estado, String cidade, String cep) {
 		super();
 		this.logradouro = logradouro;

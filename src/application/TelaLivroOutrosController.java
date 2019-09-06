@@ -20,7 +20,8 @@ public class TelaLivroOutrosController implements Initializable{
 	private TreeTableColumn<TelaLivroOutrosController,String> tabelaCodigo,tabelaAutor,tabelaTitulo;
 	
 	
-	@FXML protected void voltarParaPrincipal (ActionEvent e) {
+	@FXML
+	protected void voltarParaPrincipal (ActionEvent e) {
 		Main.MudarTela("principal");
 	}
 	

@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<SplitPane dividerPositions="0.5" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="525.0" prefWidth="560.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.TelaLivroOutrosController">
+<SplitPane dividerPositions="0.5" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="525.0" prefWidth="560.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.TelaLivroOutrosController">
   <items>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
          <children>
@@ -28,22 +28,22 @@
                   <Font name="Arial" size="12.0" />
                </font>
             </TextField>
-            <Label layoutX="52.0" layoutY="88.0" prefHeight="17.0" prefWidth="33.0" text="Titulo:">
+            <Label layoutX="58.0" layoutY="88.0" prefHeight="17.0" prefWidth="33.0" text="Titulo:">
                <font>
                   <Font name="Arial" size="12.0" />
                </font>
             </Label>
-            <TextField fx:id="txTitulo" disable="true" editable="false" layoutX="91.0" layoutY="84.0" prefHeight="25.0" prefWidth="416.0">
+            <TextField fx:id="txTitulo" disable="true" editable="false" layoutX="101.0" layoutY="84.0" prefHeight="25.0" prefWidth="406.0">
                <font>
                   <Font name="Arial" size="12.0" />
                </font>
             </TextField>
-            <Label layoutX="52.0" layoutY="122.0" text="Autor:">
+            <Label layoutX="58.0" layoutY="122.0" text="Autor:">
                <font>
                   <Font name="Arial" size="12.0" />
                </font>
             </Label>
-            <TextField fx:id="txAutor" disable="true" editable="false" layoutX="91.0" layoutY="117.0" prefHeight="25.0" prefWidth="416.0">
+            <TextField fx:id="txAutor" disable="true" editable="false" layoutX="101.0" layoutY="117.0" prefHeight="25.0" prefWidth="406.0">
                <font>
                   <Font name="Arial" size="12.0" />
                </font>
@@ -94,7 +94,7 @@
                   <Font name="Arial" size="12.0" />
                </font>
             </Button>
-            <Button fx:id="btVoltar" layoutX="61.0" layoutY="218.0" mnemonicParsing="false" text="Voltar">
+            <Button fx:id="btVoltar" layoutX="61.0" layoutY="218.0" mnemonicParsing="false" onAction="#voltarParaPrincipal" text="Voltar">
                <font>
                   <Font name="Arial" size="12.0" />
                </font>

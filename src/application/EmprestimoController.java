@@ -12,16 +12,48 @@ import javafx.scene.control.TextField;
 public class EmprestimoController implements Initializable {
 
 	@FXML
-	private TextField txNome,txCpf,txCodigo,txTitulo,txAutor;
+	private TextField txNome;
+
 	@FXML
-	private Button btVoltar,btEmprestar;
-	
-	@FXML protected void voltarParaPrincipal (ActionEvent e) {
+	private Button btEmprestar;
+
+	@FXML
+	private Button btVoltar;
+
+	@FXML
+	private TextField txCpf;
+
+	@FXML
+	private TextField txTitulo;
+
+	@FXML
+	private TextField txAutor;
+
+	@FXML
+	private TextField txCodigo;
+
+	@FXML
+	private TextField txBuscaNome;
+
+	@FXML
+	private TextField txBuscaCpf;
+
+	@FXML
+	private Button btBuscar;
+
+	@FXML
+	private TextField txBuscaTitulo;
+
+	@FXML
+	private TextField txBuscaAutor;
+
+	@FXML
+	void voltarParaPrincipal(ActionEvent event) {
 		Main.MudarTela("principal");
 	}
-	
-	
-	@Override
-	public void initialize(URL location, ResourceBundle resources) {}
 
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+
+	}
 }

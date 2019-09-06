@@ -1,13 +1,13 @@
 package ufpb.poo.biblioteca;
 
 public class Pessoa {
-	
+
 	private String nome;
 	private String cpf;
 	private long senha;
 
-	public String getNome() {
-		return nome;
+	public Pessoa() {
+		super();
 	}
 
 	public Pessoa(String nome, String cpf, long senha) {
@@ -15,6 +15,10 @@ public class Pessoa {
 		this.nome = nome;
 		this.cpf = cpf;
 		this.senha = senha;
+	}
+
+	public String getNome() {
+		return nome;
 	}
 
 	public void setNome(String nome) {
@@ -64,5 +68,5 @@ public class Pessoa {
 			return false;
 		return true;
 	}
-	
+
 }

@@ -1,14 +1,24 @@
 package ufpb.poo.biblioteca;
 
 import java.util.ArrayList;
+import java.util.List;
+
+import connections.dao.LivroDAO;
 import ufpb.poo.biblioteca.exception.*;
 
 public class SistemaLibrary implements Library {
-
-	public ArrayList<Livro> listaLivro;
-	public ArrayList<Funcionario> listaFuncionario;
-	public ArrayList<Usuario> listaUsuario;
-
+	
+	
+	private List<Livro> listaLivro;
+	private List<Funcionario> listaFuncionario;
+	private List<Usuario> listaUsuario;
+	
+	private LivroDAO livroDao = new LivroDAO();
+	
+	public void carregarLivro() {
+		listaLivro = livroDao.consultarLivro();
+	}
+	
 	public SistemaLibrary() {
 		super();
 		listaLivro = new ArrayList<Livro>();

@@ -10,6 +10,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 
 public class TelaLivroCadastroController implements Initializable {
+	
 	@FXML
 	private TextField txTitulo,txAutor,txAnoPublicacao,txGenero,txIdioma;
 	@FXML

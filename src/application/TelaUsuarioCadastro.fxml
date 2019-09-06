@@ -6,9 +6,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="441.0" prefWidth="652.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.TelaLivroCadastroController">
+<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="441.0" prefWidth="652.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.TelaLivroCadastroController">
    <children>
-      <Label layoutX="184.0" layoutY="21.0" prefHeight="37.0" prefWidth="330.0" text="CADASTRO DE USUARIO">
+      <Label layoutX="184.0" layoutY="21.0" prefHeight="37.0" prefWidth="330.0" text="CADASTRO DE CLIENTE">
          <font>
             <Font name="Arial Black" size="24.0" />
          </font>
@@ -18,27 +18,27 @@
             <Font name="Arial" size="12.0" />
          </font>
       </Label>
-      <TextField fx:id="txTitulo" alignment="CENTER" layoutX="137.0" layoutY="79.0" prefHeight="25.0" prefWidth="433.0">
+      <TextField fx:id="txTitulo" alignment="CENTER" layoutX="137.0" layoutY="79.0" prefHeight="25.0" prefWidth="440.0">
          <font>
             <Font name="Arial" size="12.0" />
          </font>
       </TextField>
-      <Label layoutX="97.0" layoutY="178.0" text="Logradouro:">
+      <Label layoutX="64.0" layoutY="178.0" text="Logradouro:">
          <font>
             <Font name="Arial" size="12.0" />
          </font>
       </Label>
-      <TextField fx:id="txAutor" alignment="CENTER" layoutX="163.0" layoutY="173.0" prefHeight="25.0" prefWidth="404.0">
+      <TextField fx:id="txAutor" alignment="CENTER" layoutX="134.0" layoutY="173.0" prefHeight="25.0" prefWidth="440.0">
          <font>
             <Font name="Arial" size="12.0" />
          </font>
       </TextField>
-      <Label layoutX="96.0" layoutY="226.0" text="Número:">
+      <Label layoutX="80.0" layoutY="226.0" text="Número:">
          <font>
             <Font name="Arial" size="12.0" />
          </font>
       </Label>
-      <TextField fx:id="txAnoPublicacao" alignment="CENTER" layoutX="143.0" layoutY="221.0" prefHeight="25.0" prefWidth="69.0">
+      <TextField fx:id="txAnoPublicacao" alignment="CENTER" layoutX="136.0" layoutY="221.0" prefHeight="25.0" prefWidth="76.0">
          <font>
             <Font name="Arial" size="12.0" />
          </font>
@@ -53,8 +53,8 @@
             <Font name="Arial" size="12.0" />
          </font>
       </TextField>
-      <Label layoutX="96.0" layoutY="272.0" text="Cidade:" />
-      <TextField fx:id="txIdioma" layoutX="139.0" layoutY="268.0" prefHeight="25.0" prefWidth="157.0">
+      <Label layoutX="85.0" layoutY="272.0" text="Cidade:" />
+      <TextField fx:id="txIdioma" layoutX="136.0" layoutY="268.0" prefHeight="25.0" prefWidth="160.0">
          <font>
             <Font name="Arial" size="12.0" />
          </font>
@@ -69,24 +69,24 @@
             <Font name="Arial" size="12.0" />
          </font>
       </Button>
-      <Label layoutX="102.0" layoutY="131.0" text="CPF:">
+      <Label layoutX="96.0" layoutY="131.0" text="CPF:">
          <font>
             <Font name="Arial" size="12.0" />
          </font>
       </Label>
-      <TextField fx:id="txGenero1" alignment="CENTER" layoutX="141.0" layoutY="126.0" prefHeight="25.0" prefWidth="193.0">
+      <TextField fx:id="txGenero1" alignment="CENTER" layoutX="134.0" layoutY="126.0" prefHeight="25.0" prefWidth="200.0">
          <font>
             <Font name="Arial" size="12.0" />
          </font>
       </TextField>
       <Label layoutX="229.0" layoutY="225.0" text="Bairro:" />
-      <TextField fx:id="txIdioma1" alignment="CENTER" layoutX="267.0" layoutY="221.0" prefHeight="25.0" prefWidth="312.0">
+      <TextField fx:id="txIdioma1" alignment="CENTER" layoutX="267.0" layoutY="221.0" prefHeight="25.0" prefWidth="306.0">
          <font>
             <Font name="Arial" size="12.0" />
          </font>
       </TextField>
       <Label layoutX="304.0" layoutY="272.0" text="Estado:" />
-      <TextField fx:id="txIdioma2" layoutX="347.0" layoutY="268.0" prefHeight="25.0" prefWidth="223.0">
+      <TextField fx:id="txIdioma2" layoutX="347.0" layoutY="268.0" prefHeight="25.0" prefWidth="226.0">
          <font>
             <Font name="Arial" size="12.0" />
          </font>

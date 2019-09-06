@@ -8,24 +8,21 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 
-public class TelaUsuarioCadastroController implements Initializable{
+public class TelaUsuarioCadastroController implements Initializable {
+
 	@FXML
-	private TextField txCpf,txNome,txLogradouro,txNumero,txBairro,txEstado,txCidade,txCep;
+	private TextField txTitulo, txAutor, txAnoPublicacao, txGenero, txIdioma, txGenero1, txIdioma1, txIdioma2;
+
 	@FXML
-	private Button btVoltar,btCadastrar;
-	
-	
-	
-	@FXML protected void voltarParaPrincipal () {
+	private Button btCadastrar, btVoltar;
+
+	@FXML
+	protected void voltarParaPrincipal() {
 		Main.MudarTela("principal");
 	}
-	
-	
-	
-	
-	
-	
+
 	@Override
-	public void initialize(URL location, ResourceBundle resources) {}
-	
+	public void initialize(URL location, ResourceBundle resources) {
+	}
+
 }

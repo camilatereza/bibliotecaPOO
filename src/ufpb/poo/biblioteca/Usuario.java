@@ -8,6 +8,10 @@ public class Usuario extends Pessoa {
 	private String contato;
 	private Endereco end;
 
+	public Usuario() {
+		super();
+	}
+	
 	public Usuario(String nome, String cpf, long senha, ArrayList<Livro> locado, String conta, Endereco ende) {
 		super(nome, cpf, senha);
 		this.livroLocado = locado;
