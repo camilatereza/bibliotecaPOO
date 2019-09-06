@@ -95,7 +95,7 @@ public class LivroDAO {
 		PreparedStatement pstm = null;
 		try {
 			pstm = con.prepareStatement(
-					"DELETE FROM produtos WHERE codigo = ?");
+					"DELETE FROM livro WHERE codigo = ?");
 			pstm.setString(1, livro.getCodigo());
 
 			pstm.executeUpdate();

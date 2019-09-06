@@ -3,30 +3,32 @@ package ufpb.poo.biblioteca;
 import java.util.ArrayList;
 import java.util.List;
 
+import connections.dao.ClienteDAO;
 import connections.dao.LivroDAO;
 import ufpb.poo.biblioteca.exception.*;
 
 public class SistemaLibrary implements Library {
-	
-	
+
 	private List<Livro> listaLivro;
-	private List<Funcionario> listaFuncionario;
 	private List<Usuario> listaUsuario;
-	
+
 	private LivroDAO livroDao = new LivroDAO();
-	
-	public void carregarLivro() {
+	private ClienteDAO clienteDao = new ClienteDAO();
+
+	public void carregarDados() {
 		listaLivro = livroDao.consultarLivro();
+		listaUsuario = clienteDao.consultarCliente();
 	}
-	
+
 	public SistemaLibrary() {
 		super();
 		listaLivro = new ArrayList<Livro>();
-		listaFuncionario = new ArrayList<Funcionario>();
 		listaUsuario = new ArrayList<Usuario>();
+		this.carregarDados();
 	}
 
 	public boolean verificaCodigo(Livro livro) {
+		this.carregarDados();
 		boolean encontrou = false;
 		for (Livro l : listaLivro)
 			if (l.getCodigo().equals(livro.getCodigo()))
@@ -35,19 +37,20 @@ public class SistemaLibrary implements Library {
 	}
 
 	public void cadastrarLivro(Livro book) {
-		listaLivro.add(book);
+		livroDao.cadastrarLivro(book);
 	}
 
-	//a exception é lançada caso algum atibuto do livro não tenha sido informado
-	public Livro alterarLivro(Livro book) throws LivroException {
-		if (book == null){
+	// a exception é lançada caso algum atibuto do livro não tenha sido informado
+	public void alterarLivro(Livro book) throws LivroException {
+		if (book == null) {
 			throw new LivroException("Livro inválido");
 		}
-		return this.buscaLivro(book);
+		livroDao.alterarLivro(book);
 	}
 
-	//exception lançada caso o livro não exista na biblioteca
+	// exception lançada caso o livro não exista na biblioteca
 	public Livro buscaLivro(Livro book) throws LivroException {
+		this.carregarDados();
 		Livro livro = null;
 		for (Livro l : listaLivro) {
 			if (l.getCodigo().equals(book.getCodigo())) {
@@ -60,11 +63,12 @@ public class SistemaLibrary implements Library {
 	}
 
 	public boolean removerLivro(Livro book) throws LivroException {
+		this.carregarDados();
 		boolean tmp = false;
 		for (Livro l : listaLivro) {
 			if (l.getCodigo().equals(book.getCodigo())) {
 				tmp = true;
-				listaLivro.remove(book);
+				livroDao.excluirLivro(book);
 			}
 		}
 		if (tmp == false) {
@@ -73,8 +77,9 @@ public class SistemaLibrary implements Library {
 		return tmp;
 	}
 
-	//gera a exception se o usuario não existir
+	// gera a exception se o usuario não existir
 	public Usuario consultarUsuario(Usuario cliente) throws UsuarioException {
+		this.carregarDados();
 		Usuario usuario = null;
 		for (Usuario u : listaUsuario)
 			if (u.getCpf().equals(cliente.getCpf()))
@@ -84,27 +89,28 @@ public class SistemaLibrary implements Library {
 		return usuario;
 	}
 
-	//retorna a exception se existir um funcionario já cadastrado com o cpf informado
+	// retorna a exception se existir um funcionario já cadastrado com o cpf
+	// informado
 	public void cadastrarUsuario(Usuario cliente) throws UsuarioException {
 		if (isEqualsCpfUsu(cliente)) {
 			throw new UsuarioException("Usuário já existe!");
 		}
-		listaUsuario.add(cliente);
+		clienteDao.cadastrarCliente(cliente);
 	}
 
-	public Usuario alterarUsuario(Usuario cliente) throws UsuarioException {
-		if(cliente == null) {
+	public void alterarUsuario(Usuario cliente) throws UsuarioException {
+		if (cliente == null) {
 			throw new UsuarioException("Usuario inválido");
 		}
-		return this.consultarUsuario(cliente);
+		clienteDao.alterarCliente(cliente);
 	}
 
-	public boolean removerUsuario(Usuario cliente) throws UsuarioException{
+	public boolean removerUsuario(Usuario cliente) throws UsuarioException {
 		boolean tmp = false;
 		for (Usuario c : listaUsuario) {
 			if (c.getCpf().equals(cliente.getCpf())) {
 				tmp = true;
-				listaUsuario.remove(cliente);
+				clienteDao.excluirCliente(cliente);
 			}
 		}
 		if (tmp == false) {
@@ -113,17 +119,9 @@ public class SistemaLibrary implements Library {
 		return tmp;
 	}
 
-	//retorna a exception se existir um funcionario já cadastrado com o cpf informado
-	@Override
-	public void cadastrarFuncionario(Funcionario fun) throws FuncionarioException {
-		if (isEqualsCpfFun(fun)) {
-			throw new FuncionarioException("Funcionario já existe!");
-		}
-		this.listaFuncionario.add(fun);
-	}
-
 	@Override
 	public ArrayList<String> listarArcevo() {
+		this.carregarDados();
 		ArrayList<String> livros = new ArrayList<String>();
 		for (Livro l : this.listaLivro) {
 			livros.add(l.getTitulo());
@@ -133,16 +131,8 @@ public class SistemaLibrary implements Library {
 		return livros;
 	}
 
-	@Override
-	public boolean verificarLogin(Funcionario funcionario) {
-		boolean logado = false;
-		for (Funcionario f : this.listaFuncionario)
-			if (f.equals(funcionario))
-				logado = true;
-		return logado;
-	}
-
 	public ArrayList<Usuario> buscaUsu(String nome) throws UsuarioException {
+		this.carregarDados();
 		ArrayList<Usuario> usuariosEncontrados = new ArrayList<Usuario>();
 		for (Usuario c : listaUsuario)
 			if (c.getNome().equals(nome))
@@ -153,6 +143,7 @@ public class SistemaLibrary implements Library {
 	}
 
 	public Usuario buscaCpf(String cpf) throws UsuarioException {
+		this.carregarDados();
 		Usuario usuario = null;
 		for (Usuario c : listaUsuario)
 			if (c.getCpf().equals(cpf))
@@ -162,17 +153,19 @@ public class SistemaLibrary implements Library {
 		return usuario;
 	}
 
-	//verifica se existe um outro Usuario com o mesmo CPF que o informado
+	// verifica se existe um outro Usuario com o mesmo CPF que o informado
 	public boolean isEqualsCpfUsu(Usuario usuario) {
+		this.carregarDados();
 		boolean cpfIgual = false;
 		for (Usuario c : listaUsuario)
 			if (usuario.getCpf().equals(c.getCpf()))
 				cpfIgual = true;
 		return cpfIgual;
 	}
-	
-	//verifica se existe um outro Funcionario com o mesmo CPF que o informado
+
+	// verifica se existe um outro Funcionario com o mesmo CPF que o informado
 	public boolean isEqualsCpfFun(Funcionario funcionario) {
+		this.carregarDados();
 		boolean cpfIgual = false;
 		for (Usuario c : listaUsuario)
 			if (funcionario.getCpf().equals(c.getCpf()))

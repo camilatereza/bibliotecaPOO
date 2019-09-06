@@ -3,11 +3,14 @@ package testes;
 import java.text.DateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 
 import javax.swing.JOptionPane;
 
 import connections.dao.LivroDAO;
+import connections.dao.ClienteDAO;
 import ufpb.poo.biblioteca.Datas;
+import ufpb.poo.biblioteca.Endereco;
 import ufpb.poo.biblioteca.Funcionario;
 import ufpb.poo.biblioteca.Livro;
 import ufpb.poo.biblioteca.SistemaLibrary;
@@ -35,14 +38,16 @@ public class testeBiblioteca {
 			
 			case "2":
 				
-				Livro objLivro1 = new Livro(2019, 1, 2, "segundo livro", "Camila", true, 2);
+				Usuario objLivro1 =new Usuario("Marcos", "123456", 1234);
 				
-				LivroDAO objDao = new LivroDAO();
-				objDao.cadastrarLivro(objLivro1);
+				ClienteDAO objDao = new ClienteDAO();
+				objLivro1.setEnd(new Endereco("logradouro","numero","bairro","estado","cidade","cep"));
+				objDao.cadastrarCliente(objLivro1);
 				
+				List<Usuario> clientes = objDao.consultarCliente();
+				System.out.println(clientes);
 				
-				
-				
+				objDao.excluirCliente(objLivro1);
 				
 
 //				sistema.cadastrarLivro(objLivro);
@@ -60,14 +65,14 @@ public class testeBiblioteca {
 //				System.out.println(sistema.listaUsuario);
 				break;
 			case "3":
-				Funcionario objFuncionario = new Funcionario("Marcos", "123456", 1234);
-				try {
-					sistema.cadastrarFuncionario(objFuncionario);
-				} catch (FuncionarioException e) {
-					System.out.println(e.getMessage());
-				}
-				System.out.println("Tudo certo!!");
-//				System.out.println(sistema.listaUsuario);
+//				Funcionario objFuncionario = new Funcionario("Marcos", "123456", 1234);
+//				try {
+//				//	sistema.cadastrarFuncionario(objFuncionario);
+//				} catch (FuncionarioException e) {
+//					System.out.println(e.getMessage());
+//				}
+//				System.out.println("Tudo certo!!");
+////				System.out.println(sistema.listaUsuario);
 				break;
 //			case "4":
 //				Livro objLivro1 = new Livro("123", 2014, 5, 2, "O genio", "Geiseel", 2);

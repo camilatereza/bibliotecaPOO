@@ -85,7 +85,7 @@ public class Main extends Application {
 			break;
 		}
 	}
-
+	
 	// isso eu não sei para que serve,mas veio junto então so aceitei
 	public static void main(String[] args) {
 		launch(args);
