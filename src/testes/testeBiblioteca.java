@@ -38,17 +38,18 @@ public class testeBiblioteca {
 			
 			case "2":
 				
-				Usuario objLivro1 =new Usuario("Marcos", "123456", 1234);
+				Livro objLivro1 =new Livro(0, 0, 0, "Titulo", "Autor", true);
 				
-				ClienteDAO objDao = new ClienteDAO();
-				objLivro1.setEnd(new Endereco("logradouro","numero","bairro","estado","cidade","cep"));
-				objDao.cadastrarCliente(objLivro1);
+				sistema.cadastrarLivro(objLivro1); 
 				
-				List<Usuario> clientes = objDao.consultarCliente();
-				System.out.println(clientes);
-				
-				objDao.excluirCliente(objLivro1);
-				
+//				objLivro1.setEnd(new Endereco("logradouro","numero","bairro","estado","cidade","cep"));
+//				objDao.cadastrarCliente(objLivro1);
+//				
+//				List<Usuario> clientes = objDao.consultarCliente();
+//				System.out.println(clientes);
+//				
+//				objDao.excluirCliente(objLivro1);
+//				
 
 //				sistema.cadastrarLivro(objLivro);
 //				System.out.println("Tudo certo!!");

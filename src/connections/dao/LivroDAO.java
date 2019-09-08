@@ -15,6 +15,7 @@ import ufpb.poo.biblioteca.Livro;
 public class LivroDAO {
 
 	public void cadastrarLivro(Livro livro) {
+		System.out.print("Livro ok" + livro);
 		Connection con = Conexao.getConnection();
 		PreparedStatement pstm = null;
 		try {
@@ -26,7 +27,7 @@ public class LivroDAO {
 			pstm.setInt(4, livro.getAno());
 			pstm.setInt(5, livro.getGenero());
 			pstm.setInt(6, livro.getIdioma());
-			pstm.setString(7, "true");
+			pstm.setString(7, String.valueOf((livro.isDisponivel())));
 
 			pstm.executeUpdate();
 

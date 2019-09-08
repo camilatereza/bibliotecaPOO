@@ -12,11 +12,11 @@ public class Livro {
 	private String titulo;
 	private String autor;
 	private boolean disponivel;
-	private int quantidadeDeLivros;
+//	private int quantidadeDeLivros;
 
 	private Datas dias;
 
-	public Livro(int ano, int genero, int idioma, String titulo, String autor, boolean disponivel, int quantidade) {
+	public Livro(int ano, int genero, int idioma, String titulo, String autor, boolean disponivel) {
 		super();
 		this.codigo = this.gerarCodigo(genero, idioma, ano);
 		this.ano = ano;
@@ -25,12 +25,21 @@ public class Livro {
 		this.titulo = titulo;
 		this.autor = autor;
 		this.disponivel = disponivel;
-		this.quantidadeDeLivros = quantidade;
+//		this.quantidadeDeLivros = quantidade;
 		this.dias = new Datas();
 	}
 
 	public Livro() {
 		super();
+		this.codigo = this.gerarCodigo(genero, idioma, ano);
+		this.ano = 0;
+		this.genero = 0;
+		this.idioma = 0;
+		this.titulo = "";
+		this.autor = "";
+		this.disponivel = false;
+//		this.quantidadeDeLivros = 0;
+		this.dias = new Datas();
 	}
 
 	//o codigo é numerico e usa os enum para gerar um codigo diferente para cada livro;
@@ -107,13 +116,13 @@ public class Livro {
 		this.disponivel = disponivel;
 	}
 
-	public int getQuantidadeDeLivros() {
-		return quantidadeDeLivros;
-	}
-
-	public void setQuantidadeDeLivros(int quantidadeDeLivros) {
-		this.quantidadeDeLivros = quantidadeDeLivros;
-	}
+//	public int getQuantidadeDeLivros() {
+//		return quantidadeDeLivros;
+//	}
+//
+//	public void setQuantidadeDeLivros(int quantidadeDeLivros) {
+//		this.quantidadeDeLivros = quantidadeDeLivros;
+//	}
 
 	public Datas getDias() {
 		return dias;
@@ -157,8 +166,7 @@ public class Livro {
 	@Override
 	public String toString() {
 		return "Livro [codigo=" + codigo + ", ano=" + ano + ", genero=" + genero + ", idioma=" + idioma + ", titulo="
-				+ titulo + ", autor=" + autor + ", disponivel=" + disponivel + ", quantidadeDeLivros="
-				+ quantidadeDeLivros + "]";
+				+ titulo + ", autor=" + autor + ", disponivel=" + disponivel + "]";
 	}
 
 }

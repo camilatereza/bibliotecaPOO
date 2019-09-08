@@ -73,7 +73,7 @@ public class TelaPrincipalController implements Initializable {
 
 	@FXML
 	protected void IrParaLivro(ActionEvent e) {
-		Main.MudarTela("telaLivroCadastro");
+		Main.MudarTela("telaLivroOutros");
 	}
 
 	@FXML

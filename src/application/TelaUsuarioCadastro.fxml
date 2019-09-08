@@ -13,12 +13,12 @@
             <Font name="Arial Black" size="24.0" />
          </font>
       </Label>
-      <Label layoutX="100.0" layoutY="83.0" prefHeight="17.0" prefWidth="40.0" text="Nome:">
+      <Label layoutX="87.0" layoutY="83.0" prefHeight="17.0" prefWidth="40.0" text="Nome:">
          <font>
             <Font name="Arial" size="12.0" />
          </font>
       </Label>
-      <TextField fx:id="txTitulo" alignment="CENTER" layoutX="137.0" layoutY="79.0" prefHeight="25.0" prefWidth="440.0">
+      <TextField fx:id="txNome" alignment="TOP_LEFT" layoutX="137.0" layoutY="79.0" prefHeight="25.0" prefWidth="440.0">
          <font>
             <Font name="Arial" size="12.0" />
          </font>
@@ -28,7 +28,7 @@
             <Font name="Arial" size="12.0" />
          </font>
       </Label>
-      <TextField fx:id="txAutor" alignment="CENTER" layoutX="134.0" layoutY="173.0" prefHeight="25.0" prefWidth="440.0">
+      <TextField fx:id="txLogradouro" alignment="CENTER" layoutX="134.0" layoutY="173.0" prefHeight="25.0" prefWidth="440.0">
          <font>
             <Font name="Arial" size="12.0" />
          </font>
@@ -38,7 +38,7 @@
             <Font name="Arial" size="12.0" />
          </font>
       </Label>
-      <TextField fx:id="txAnoPublicacao" alignment="CENTER" layoutX="136.0" layoutY="221.0" prefHeight="25.0" prefWidth="76.0">
+      <TextField fx:id="txNumero" alignment="CENTER" layoutX="136.0" layoutY="221.0" prefHeight="25.0" prefWidth="76.0">
          <font>
             <Font name="Arial" size="12.0" />
          </font>
@@ -48,18 +48,18 @@
             <Font name="Arial" size="12.0" />
          </font>
       </Label>
-      <TextField fx:id="txGenero" alignment="CENTER" layoutX="374.0" layoutY="126.0" prefHeight="25.0" prefWidth="200.0">
+      <TextField fx:id="txCep" alignment="CENTER" layoutX="374.0" layoutY="126.0" prefHeight="25.0" prefWidth="200.0">
          <font>
             <Font name="Arial" size="12.0" />
          </font>
       </TextField>
       <Label layoutX="85.0" layoutY="272.0" text="Cidade:" />
-      <TextField fx:id="txIdioma" layoutX="136.0" layoutY="268.0" prefHeight="25.0" prefWidth="160.0">
+      <TextField fx:id="txCidade" layoutX="136.0" layoutY="268.0" prefHeight="25.0" prefWidth="160.0">
          <font>
             <Font name="Arial" size="12.0" />
          </font>
       </TextField>
-      <Button fx:id="btCadastrar" layoutX="416.0" layoutY="365.0" mnemonicParsing="false" text="Cadastrar">
+      <Button fx:id="btCadastrar" layoutX="416.0" layoutY="365.0" mnemonicParsing="false" onAction="#cadastrarCliente" text="Cadastrar">
          <font>
             <Font name="Arial" size="12.0" />
          </font>
@@ -74,19 +74,19 @@
             <Font name="Arial" size="12.0" />
          </font>
       </Label>
-      <TextField fx:id="txGenero1" alignment="CENTER" layoutX="134.0" layoutY="126.0" prefHeight="25.0" prefWidth="200.0">
+      <TextField fx:id="txCpf" alignment="CENTER" layoutX="134.0" layoutY="126.0" prefHeight="25.0" prefWidth="200.0">
          <font>
             <Font name="Arial" size="12.0" />
          </font>
       </TextField>
       <Label layoutX="229.0" layoutY="225.0" text="Bairro:" />
-      <TextField fx:id="txIdioma1" alignment="CENTER" layoutX="267.0" layoutY="221.0" prefHeight="25.0" prefWidth="306.0">
+      <TextField fx:id="txBairro" alignment="CENTER" layoutX="267.0" layoutY="221.0" prefHeight="25.0" prefWidth="306.0">
          <font>
             <Font name="Arial" size="12.0" />
          </font>
       </TextField>
       <Label layoutX="304.0" layoutY="272.0" text="Estado:" />
-      <TextField fx:id="txIdioma2" layoutX="347.0" layoutY="268.0" prefHeight="25.0" prefWidth="226.0">
+      <TextField fx:id="txEstado" layoutX="347.0" layoutY="268.0" prefHeight="25.0" prefWidth="226.0">
          <font>
             <Font name="Arial" size="12.0" />
          </font>

@@ -37,6 +37,7 @@ public class SistemaLibrary implements Library {
 	}
 
 	public void cadastrarLivro(Livro book) {
+		System.out.print("Chegou no metodo do StistemaLibrary" + book);
 		livroDao.cadastrarLivro(book);
 	}
 

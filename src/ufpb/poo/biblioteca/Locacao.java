@@ -37,7 +37,7 @@ public class Locacao {
 	public void efetuarEmprestimo(Livro book, Usuario cliente) throws LivroException {
 		if (book == null || cliente == null)
 			throw new LivroException("Objeto nulo, tente novamente!");
-		cliente.setLivroLocado(book);
+//		cliente.setLivroLocado(book);
 		book.setDisponivel(false);
 	}
 	

@@ -1,29 +1,40 @@
 package application;
 
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
-import javax.swing.JOptionPane;
-
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import ufpb.poo.biblioteca.Genero;
 import ufpb.poo.biblioteca.Idioma;
 import ufpb.poo.biblioteca.Livro;
 import ufpb.poo.biblioteca.SistemaLibrary;
-import ufpb.poo.biblioteca.Usuario;
 
 public class TelaLivroCadastroController implements Initializable {
 
-	private SistemaLibrary sistema;
+	private ArrayList<Genero> generos;
+	private ObservableList<Genero> qualquerNome;
+	private ArrayList<Idioma> idiomas;
+	private ObservableList<Idioma> qualquerNome2;
+	private SistemaLibrary sistema = new SistemaLibrary();
+	
 	@FXML
-	private TextField txTitulo, txAutor, txAnoPublicacao, txGenero, txIdioma;
+	private TextField txTitulo, txAutor, txAno, txQuant;
 	@FXML
 	private Button btCadastrar, btVoltar;
+	@FXML
+	private ComboBox<Genero> cbGenero;
+	@FXML
+	private ComboBox<Idioma> cbIdioma;
 
+	
 	@FXML
 	protected void voltarParaPrincipal(ActionEvent e) {
 		Main.MudarTela("principal");
@@ -31,50 +42,41 @@ public class TelaLivroCadastroController implements Initializable {
 
 	@FXML
 	public void cadastroLivro(ActionEvent e) {
-		int genero = 0, idioma = 0;
-		try {
-			genero = this.obterGenero(txGenero.getText());
-			idioma = this.obterGenero(txIdioma.getText());
-		} catch (Exception e1) {
-			JOptionPane.showMessageDialog(null, "Gênero inválido!!");
+		
+		String titulo = txTitulo.getText();
+		String autor = txAutor.getText();
+		int ano = Integer.parseInt(txAno.getText());
+//		int quantidade = Integer.parseInt(txQuant.getText());
+		
+		Genero genero = cbGenero.getValue();
+		Idioma idioma = cbIdioma.getValue();
+
+		Livro book = new Livro(ano, genero.getValor(), idioma.getValor(), titulo, autor, true);
+		sistema.cadastrarLivro(book);
+	}
+
+	@FXML
+	public void CarregarDados() {
+		Genero[] arrayGenero = Genero.values();
+		generos = new ArrayList<>();
+		for(Genero g: arrayGenero) {
+			generos.add(g);
 		}
-
-		sistema.cadastrarLivro(new Livro(2019, genero, idioma, txTitulo.getText(), txAutor.getText(), true, 1));
-
+		
+		qualquerNome = FXCollections.observableArrayList(generos);
+		cbGenero.setItems(qualquerNome);
 	}
 	
-	//Paramos aqui!!!!!
 	@FXML
-	public void opcaoGeneros(ActionEvent e) {
+	public void CarregarIdioma() {
+		Idioma[] arrayIdioma = Idioma.values();
+		idiomas = new ArrayList<>();
+		for(Idioma i: arrayIdioma) {
+			idiomas.add(i);
+		}
 		
-	}
-
-	public int obterGenero(String gen) throws Exception {
-		Genero[] generos = Genero.values();
-		Genero generoObtido = Genero.valueOf(gen);
-		int i = -1;
-		for (Genero g : generos) {
-			if (g.getValor() == generoObtido.getValor()) {
-				i = g.getValor();
-			}
-		}
-		if (i == -1)
-			throw new Exception("Gênero inválido!");
-		return i;
-	}
-
-	public int obterIdioma(String idioma) throws Exception {
-		Idioma[] idomas = Idioma.values();
-		Idioma generoObtido = Idioma.valueOf(idioma);
-		int i = -1;
-		for (Idioma g : idomas) {
-			if (g.getValor() == generoObtido.getValor()) {
-				i = g.getValor();
-			}
-		}
-		if (i == -1)
-			throw new Exception("Gênero inválido!");
-		return i;
+		qualquerNome2 = FXCollections.observableArrayList(idiomas);
+		cbIdioma.setItems(qualquerNome2);
 	}
 
 	@Override
