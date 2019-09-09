@@ -1,7 +1,6 @@
 package application;
 
 import java.util.ResourceBundle;
-
 import javax.swing.JOptionPane;
 
 import javafx.event.ActionEvent;
@@ -19,37 +18,13 @@ public class TelaUsuarioCadastroController implements Initializable {
 	SistemaLibrary sistema = new SistemaLibrary();
 
 	@FXML
-	private TextField txNome;
+	private TextField txNome, txLogradouro, txNumero, txCep, txCidade, txCpf, txBairro, txEstado;
+	
+	@FXML
+	private Button btVoltar, btCadastrar;
 
 	@FXML
-	private TextField txLogradouro;
-
-	@FXML
-	private TextField txNumero;
-
-	@FXML
-	private TextField txCep;
-
-	@FXML
-	private TextField txCidade;
-
-	@FXML
-	private Button btCadastrar;
-
-	@FXML
-	private Button btVoltar;
-
-	@FXML
-	private TextField txCpf;
-
-	@FXML
-	private TextField txBairro;
-
-	@FXML
-	private TextField txEstado;
-
-	@FXML
-	void cadastrarCliente(ActionEvent event) {
+	public void cadastrarCliente(ActionEvent event) {
 		String nome = txNome.getText();
 		String logradouro = txLogradouro.getText();
 		String numero = txNumero.getText();

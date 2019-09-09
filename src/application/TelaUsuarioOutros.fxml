@@ -23,17 +23,63 @@
                   <Font name="Arial" size="12.0" />
                </font>
             </Label>
+            <TextField fx:id="txCpf" alignment="TOP_LEFT" editable="false" layoutX="150.0" layoutY="59.0" prefHeight="25.0" prefWidth="133.0">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+            </TextField>
             <Label layoutX="103.0" layoutY="94.0" text="Nome:">
                <font>
                   <Font name="Arial" size="12.0" />
                </font>
             </Label>
-            <TextField fx:id="txCpf" editable="false" layoutX="150.0" layoutY="59.0" prefHeight="25.0" prefWidth="133.0">
+            <TextField fx:id="txNome" alignment="TOP_LEFT" editable="false" layoutX="149.0" layoutY="90.0" prefHeight="25.0" prefWidth="373.0">
                <font>
                   <Font name="Arial" size="12.0" />
                </font>
             </TextField>
-            <TextField fx:id="txNome" editable="false" layoutX="149.0" layoutY="90.0" prefHeight="25.0" prefWidth="373.0">
+            <Label layoutX="74.0" layoutY="128.0" text="Logradouro:">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txLogradouro" alignment="TOP_LEFT" editable="false" layoutX="149.0" layoutY="123.0" prefHeight="25.0" prefWidth="373.0">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+            </TextField>
+            <Label layoutX="93.0" layoutY="160.0" text="Número:">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txNumero" alignment="TOP_LEFT" editable="false" layoutX="151.0" layoutY="156.0" prefHeight="25.0" prefWidth="59.0" />
+            <Label layoutX="220.0" layoutY="161.0" text="Bairro:">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txBairro" alignment="TOP_LEFT" editable="false" layoutX="265.0" layoutY="156.0" prefHeight="25.0" prefWidth="254.0">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+            </TextField>
+            <Label layoutX="98.0" layoutY="195.0" text="Cidade:">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txCidade" alignment="TOP_LEFT" editable="false" layoutX="150.0" layoutY="190.0" prefHeight="25.0" prefWidth="133.0">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+            </TextField>
+            <Label layoutX="295.0" layoutY="195.0" text="Estado:">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txEstado" alignment="TOP_LEFT" editable="false" layoutX="346.0" layoutY="190.0" prefHeight="25.0" prefWidth="172.0">
                <font>
                   <Font name="Arial" size="12.0" />
                </font>
@@ -48,61 +94,30 @@
                   <Font name="Arial" size="12.0" />
                </font>
             </Button>
-            <Label layoutX="93.0" layoutY="160.0" text="Número:">
-               <font>
-                  <Font name="Arial" size="12.0" />
-               </font>
-            </Label>
-            <TextField fx:id="txNumero" editable="false" layoutX="151.0" layoutY="156.0" prefHeight="25.0" prefWidth="59.0" />
-            <Label layoutX="220.0" layoutY="161.0" text="Bairro:">
-               <font>
-                  <Font name="Arial" size="12.0" />
-               </font>
-            </Label>
-            <TextField fx:id="txBairro" editable="false" layoutX="265.0" layoutY="156.0" prefHeight="25.0" prefWidth="254.0">
-               <font>
-                  <Font name="Arial" size="12.0" />
-               </font>
-            </TextField>
-            <Label layoutX="98.0" layoutY="195.0" text="Cidade:">
-               <font>
-                  <Font name="Arial" size="12.0" />
-               </font>
-            </Label>
-            <TextField fx:id="txCidade" editable="false" layoutX="150.0" layoutY="190.0" prefHeight="25.0" prefWidth="133.0">
-               <font>
-                  <Font name="Arial" size="12.0" />
-               </font>
-            </TextField>
-            <Label layoutX="295.0" layoutY="195.0" text="Estado:">
-               <font>
-                  <Font name="Arial" size="12.0" />
-               </font>
-            </Label>
-            <TextField fx:id="txEstado" editable="false" layoutX="346.0" layoutY="190.0" prefHeight="25.0" prefWidth="172.0">
-               <font>
-                  <Font name="Arial" size="12.0" />
-               </font>
-            </TextField>
             <Button layoutX="469.0" layoutY="231.0" mnemonicParsing="false" text="Alterar">
                <font>
                   <Font name="Arial" size="12.0" />
                </font>
             </Button>
-            <Label layoutX="74.0" layoutY="128.0" text="Logradouro:">
+         </children></AnchorPane>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+         <children>
+            <Label layoutX="73.0" layoutY="35.0" text="CPF:">
                <font>
                   <Font name="Arial" size="12.0" />
                </font>
             </Label>
-            <TextField fx:id="txLogradouro" editable="false" layoutX="149.0" layoutY="123.0" prefHeight="25.0" prefWidth="373.0">
+            <TextField fx:id="txCpfConsulta" alignment="TOP_LEFT" layoutX="130.0" layoutY="31.0" prefHeight="23.0" prefWidth="310.0">
                <font>
                   <Font name="Arial" size="12.0" />
                </font>
             </TextField>
-         </children></AnchorPane>
-    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
-         <children>
-            <TextField fx:id="txCpfConsulta" layoutX="130.0" layoutY="31.0" prefHeight="23.0" prefWidth="310.0">
+            <Label layoutX="73.0" layoutY="64.0" text="Nome:">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txNomeConsulta" alignment="TOP_LEFT" layoutX="130.0" layoutY="60.0" prefHeight="23.0" prefWidth="310.0">
                <font>
                   <Font name="Arial" size="12.0" />
                </font>
@@ -112,26 +127,11 @@
                   <Font name="Arial" size="12.0" />
                </font>
             </Button>
-            <TextField fx:id="txNomeConsulta" layoutX="130.0" layoutY="60.0" prefHeight="23.0" prefWidth="310.0">
-               <font>
-                  <Font name="Arial" size="12.0" />
-               </font>
-            </TextField>
             <Button layoutX="458.0" layoutY="60.0" mnemonicParsing="false" text="Consultar">
                <font>
                   <Font name="Arial" size="12.0" />
                </font>
             </Button>
-            <Label layoutX="73.0" layoutY="35.0" text="CPF:">
-               <font>
-                  <Font name="Arial" size="12.0" />
-               </font>
-            </Label>
-            <Label layoutX="73.0" layoutY="64.0" text="Nome:">
-               <font>
-                  <Font name="Arial" size="12.0" />
-               </font>
-            </Label>
             <TableView layoutX="73.0" layoutY="94.0" prefHeight="150.0" prefWidth="453.0" AnchorPane.rightAnchor="72.0">
               <columns>
                 <TableColumn prefWidth="295.0" text="Nome" />

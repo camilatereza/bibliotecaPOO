@@ -19,7 +19,7 @@
             <Font name="Arial" size="12.0" />
          </font>
       </Label>
-      <TextField fx:id="txTitulo" layoutX="133.0" layoutY="135.0" prefHeight="25.0" prefWidth="476.0">
+      <TextField fx:id="txTitulo" alignment="TOP_LEFT" layoutX="133.0" layoutY="135.0" prefHeight="25.0" prefWidth="476.0">
          <font>
             <Font name="Arial" size="12.0" />
          </font>
@@ -29,7 +29,7 @@
             <Font name="Arial" size="12.0" />
          </font>
       </Label>
-      <TextField fx:id="txAutor" layoutX="132.0" layoutY="189.0" prefHeight="25.0" prefWidth="177.0">
+      <TextField fx:id="txAutor" alignment="TOP_LEFT" layoutX="132.0" layoutY="189.0" prefHeight="25.0" prefWidth="177.0">
          <font>
             <Font name="Arial" size="12.0" />
          </font>
@@ -39,17 +39,29 @@
             <Font name="Arial" size="12.0" />
          </font>
       </Label>
-      <TextField fx:id="txAno" layoutX="364.0" layoutY="189.0" prefHeight="25.0" prefWidth="60.0">
+      <TextField fx:id="txAno" alignment="TOP_LEFT" layoutX="364.0" layoutY="189.0" prefHeight="25.0" prefWidth="60.0">
          <font>
             <Font name="Arial" size="12.0" />
          </font>
       </TextField>
+      <Label layoutX="451.0" layoutY="194.0" text="Quantidade:">
+         <font>
+            <Font name="Arial" size="12.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txQuant" alignment="TOP_LEFT" layoutX="526.0" layoutY="189.0" prefHeight="25.0" prefWidth="83.0">
+         <font>
+            <Font name="Arial" size="12.0" />
+         </font>
+      </TextField>
+      <Label layoutX="78.0" layoutY="244.0" text="Idioma:" />
+      <ComboBox fx:id="cbIdioma" layoutX="133.0" layoutY="240.0" onShown="#CarregarIdioma" prefHeight="25.0" prefWidth="140.0" promptText="IDIOMAS" />
       <Label layoutX="342.0" layoutY="245.0" text="Gênero textual:">
          <font>
             <Font name="Arial" size="12.0" />
          </font>
       </Label>
-      <Label layoutX="78.0" layoutY="244.0" text="Idioma:" />
+      <ComboBox fx:id="cbGenero" layoutX="451.0" layoutY="240.0" onShown="#CarregarDados" prefHeight="25.0" prefWidth="158.0" promptText="GENERO" />
       <Button fx:id="btCadastrar" layoutX="416.0" layoutY="343.0" mnemonicParsing="false" onAction="#cadastroLivro" text="Cadastrar">
          <font>
             <Font name="Arial" size="12.0" />
@@ -60,17 +72,5 @@
             <Font name="Arial" size="12.0" />
          </font>
       </Button>
-      <ComboBox fx:id="cbGenero" layoutX="451.0" layoutY="240.0" onShown="#CarregarDados" prefHeight="25.0" prefWidth="158.0" promptText="GENERO" />
-      <ComboBox fx:id="cbIdioma" layoutX="133.0" layoutY="240.0" onShown="#CarregarIdioma" prefHeight="25.0" prefWidth="140.0" promptText="IDIOMAS" />
-      <Label layoutX="451.0" layoutY="194.0" text="Quantidade:">
-         <font>
-            <Font name="Arial" size="12.0" />
-         </font>
-      </Label>
-      <TextField fx:id="txQuant" layoutX="526.0" layoutY="189.0" prefHeight="25.0" prefWidth="83.0">
-         <font>
-            <Font name="Arial" size="12.0" />
-         </font>
-      </TextField>
    </children>
 </AnchorPane>

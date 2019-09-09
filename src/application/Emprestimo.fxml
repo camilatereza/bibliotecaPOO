@@ -16,57 +16,32 @@
             <Font name="Arial Black" size="24.0" />
          </font>
       </Label>
-      <Label layoutX="24.0" layoutY="98.0" prefHeight="17.0" prefWidth="49.0" text="Nome:">
-         <font>
-            <Font name="Arial" size="14.0" />
-         </font>
-      </Label>
-      <TextField fx:id="txNome" alignment="CENTER" disable="true" editable="false" layoutX="80.0" layoutY="93.0" prefHeight="26.0" prefWidth="217.0">
-         <font>
-            <Font name="Arial" size="14.0" />
-         </font>
-      </TextField>
-      <Button fx:id="btEmprestar" layoutX="544.0" layoutY="188.0" mnemonicParsing="false" text="Emprestar">
-         <font>
-            <Font name="Arial" size="14.0" />
-         </font>
-      </Button>
-      <Button fx:id="btVoltar" layoutX="454.0" layoutY="188.0" mnemonicParsing="false" onAction="#voltarParaPrincipal" text="Voltar">
-         <font>
-            <Font name="Arial" size="14.0" />
-         </font>
-      </Button>
-      <Label layoutX="30.0" layoutY="141.0" prefHeight="16.0" prefWidth="38.0" text="CPF:">
-         <font>
-            <Font name="Arial" size="14.0" />
-         </font>
-      </Label>
-      <TextField fx:id="txCpf" alignment="CENTER" disable="true" editable="false" layoutX="81.0" layoutY="136.0" prefHeight="26.0" prefWidth="217.0">
-         <font>
-            <Font name="Arial" size="14.0" />
-         </font>
-      </TextField>
       <Label layoutX="25.0" layoutY="62.0" text="Cliente:">
          <font>
             <Font name="Arial Bold" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="328.0" layoutY="127.0" prefHeight="17.0" prefWidth="49.0" text="Titulo:">
+      <Label layoutX="333.0" layoutY="62.0" text="Livro:">
+         <font>
+            <Font name="Arial Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="24.0" layoutY="98.0" prefHeight="17.0" prefWidth="49.0" text="Nome:">
          <font>
             <Font name="Arial" size="14.0" />
          </font>
       </Label>
-      <TextField fx:id="txTitulo" disable="true" editable="false" layoutX="377.0" layoutY="123.0" prefHeight="26.0" prefWidth="253.0">
+      <TextField fx:id="txNome" alignment="TOP_LEFT" disable="true" editable="false" layoutX="80.0" layoutY="93.0" prefHeight="26.0" prefWidth="217.0">
          <font>
             <Font name="Arial" size="14.0" />
          </font>
       </TextField>
-      <Label layoutX="333.0" layoutY="161.0" text="Autor:">
+      <Label layoutX="30.0" layoutY="141.0" prefHeight="16.0" prefWidth="38.0" text="CPF:">
          <font>
             <Font name="Arial" size="14.0" />
          </font>
       </Label>
-      <TextField fx:id="txAutor" disable="true" editable="false" layoutX="377.0" layoutY="156.0" prefHeight="26.0" prefWidth="253.0">
+      <TextField fx:id="txCpf" alignment="TOP_LEFT" disable="true" editable="false" layoutX="81.0" layoutY="136.0" prefHeight="26.0" prefWidth="217.0">
          <font>
             <Font name="Arial" size="14.0" />
          </font>
@@ -76,82 +51,37 @@
             <Font name="Arial" size="14.0" />
          </font>
       </Label>
-      <TextField fx:id="txCodigo" alignment="CENTER" disable="true" editable="false" layoutX="377.0" layoutY="87.0" prefHeight="26.0" prefWidth="38.0">
+      <TextField fx:id="txCodigo" alignment="TOP_LEFT" disable="true" editable="false" layoutX="377.0" layoutY="87.0" prefHeight="26.0" prefWidth="38.0">
          <font>
             <Font name="Arial" size="14.0" />
          </font>
       </TextField>
+      <Label layoutX="328.0" layoutY="127.0" prefHeight="17.0" prefWidth="49.0" text="Titulo:">
+         <font>
+            <Font name="Arial" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txTitulo" alignment="TOP_LEFT" disable="true" editable="false" layoutX="377.0" layoutY="123.0" prefHeight="26.0" prefWidth="253.0">
+         <font>
+            <Font name="Arial" size="14.0" />
+         </font>
+      </TextField>
+      <Label layoutX="333.0" layoutY="161.0" text="Autor:">
+         <font>
+            <Font name="Arial" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txAutor" alignment="TOP_LEFT" disable="true" editable="false" layoutX="377.0" layoutY="156.0" prefHeight="26.0" prefWidth="253.0">
+         <font>
+            <Font name="Arial" size="14.0" />
+         </font>
+      </TextField>
+      <Button fx:id="btEmprestar" layoutX="544.0" layoutY="188.0" mnemonicParsing="false" text="Emprestar">
+         <font>
+            <Font name="Arial" size="14.0" />
+         </font>
+      </Button>
       <Separator layoutX="314.0" layoutY="62.0" orientation="VERTICAL" prefHeight="146.0" prefWidth="0.0" />
-      <Label layoutX="333.0" layoutY="62.0" text="Livro:">
-         <font>
-            <Font name="Arial Bold" size="18.0" />
-         </font>
-      </Label>
-      <TableView layoutX="30.0" layoutY="362.0" prefHeight="146.0" prefWidth="282.0">
-        <columns>
-          <TableColumn prefWidth="36.0" text="id" />
-          <TableColumn prefWidth="136.0" text="Nome" />
-            <TableColumn prefWidth="109.0" text="CPF" />
-        </columns>
-      </TableView>
-      <Label layoutX="24.0" layoutY="261.0" prefHeight="17.0" prefWidth="49.0" text="Nome:">
-         <font>
-            <Font name="Arial" size="14.0" />
-         </font>
-      </Label>
-      <TextField fx:id="txBuscaNome" alignment="CENTER" layoutX="81.0" layoutY="256.0" prefHeight="26.0" prefWidth="217.0">
-         <font>
-            <Font name="Arial" size="14.0" />
-         </font>
-      </TextField>
-      <Separator layoutX="12.0" layoutY="221.0" prefHeight="2.0" prefWidth="633.0" />
-      <Label layoutX="24.0" layoutY="294.0" prefHeight="17.0" prefWidth="38.0" text="CPF:">
-         <font>
-            <Font name="Arial" size="14.0" />
-         </font>
-      </Label>
-      <TextField fx:id="txBuscaCpf" alignment="CENTER" layoutX="80.0" layoutY="289.0" prefHeight="26.0" prefWidth="217.0">
-         <font>
-            <Font name="Arial" size="14.0" />
-         </font>
-      </TextField>
-      <Button fx:id="btBuscar" layoutX="235.0" layoutY="322.0" mnemonicParsing="false" text="Buscar">
-         <font>
-            <Font name="Arial" size="14.0" />
-         </font>
-      </Button>
-      <TableView layoutX="335.0" layoutY="362.0" prefHeight="146.0" prefWidth="291.0">
-         <columns>
-            <TableColumn prefWidth="62.0" text="Código" />
-            <TableColumn prefWidth="110.0" text="Titulo" />
-            <TableColumn prefWidth="109.0" text="Autor" />
-         </columns>
-      </TableView>
-      <Label layoutX="335.0" layoutY="266.0" prefHeight="17.0" prefWidth="49.0" text="Titulo:">
-         <font>
-            <Font name="Arial" size="14.0" />
-         </font>
-      </Label>
-      <TextField fx:id="txBuscaTitulo" alignment="CENTER" layoutX="392.0" layoutY="261.0" prefHeight="26.0" prefWidth="237.0">
-         <font>
-            <Font name="Arial" size="14.0" />
-         </font>
-      </TextField>
-      <Label layoutX="335.0" layoutY="299.0" prefHeight="17.0" prefWidth="38.0" text="Autor:">
-         <font>
-            <Font name="Arial" size="14.0" />
-         </font>
-      </Label>
-      <TextField fx:id="txBuscaAutor" alignment="CENTER" layoutX="391.0" layoutY="294.0" prefHeight="26.0" prefWidth="237.0">
-         <font>
-            <Font name="Arial" size="14.0" />
-         </font>
-      </TextField>
-      <Button fx:id="btBuscar" layoutX="563.0" layoutY="322.0" mnemonicParsing="false" text="Buscar">
-         <font>
-            <Font name="Arial" size="14.0" />
-         </font>
-      </Button>
       <Label layoutX="137.0" layoutY="225.0" text="Cliente">
          <font>
             <Font name="Arial Bold" size="18.0" />
@@ -162,6 +92,76 @@
             <Font name="Arial Bold" size="18.0" />
          </font>
       </Label>
+      <Label layoutX="24.0" layoutY="261.0" prefHeight="17.0" prefWidth="49.0" text="Nome:">
+         <font>
+            <Font name="Arial" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txBuscaNome" alignment="TOP_LEFT" layoutX="81.0" layoutY="256.0" prefHeight="26.0" prefWidth="217.0">
+         <font>
+            <Font name="Arial" size="14.0" />
+         </font>
+      </TextField>
+      <Label layoutX="24.0" layoutY="294.0" prefHeight="17.0" prefWidth="38.0" text="CPF:">
+         <font>
+            <Font name="Arial" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txBuscaCpf" alignment="TOP_LEFT" layoutX="80.0" layoutY="289.0" prefHeight="26.0" prefWidth="217.0">
+         <font>
+            <Font name="Arial" size="14.0" />
+         </font>
+      </TextField>
+      <Button fx:id="btBuscar" layoutX="235.0" layoutY="322.0" mnemonicParsing="false" text="Buscar">
+         <font>
+            <Font name="Arial" size="14.0" />
+         </font>
+      </Button>
+      <Label layoutX="335.0" layoutY="266.0" prefHeight="17.0" prefWidth="49.0" text="Titulo:">
+         <font>
+            <Font name="Arial" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txBuscaTitulo" alignment="TOP_LEFT" layoutX="392.0" layoutY="261.0" prefHeight="26.0" prefWidth="237.0">
+         <font>
+            <Font name="Arial" size="14.0" />
+         </font>
+      </TextField>
+      <Label layoutX="335.0" layoutY="299.0" prefHeight="17.0" prefWidth="38.0" text="Autor:">
+         <font>
+            <Font name="Arial" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txBuscaAutor" alignment="TOP_LEFT" layoutX="391.0" layoutY="294.0" prefHeight="26.0" prefWidth="237.0">
+         <font>
+            <Font name="Arial" size="14.0" />
+         </font>
+      </TextField>
+      <Button fx:id="btBuscar" layoutX="563.0" layoutY="322.0" mnemonicParsing="false" text="Buscar">
+         <font>
+            <Font name="Arial" size="14.0" />
+         </font>
+      </Button>
+      <TableView layoutX="30.0" layoutY="362.0" prefHeight="146.0" prefWidth="282.0">
+        <columns>
+          <TableColumn prefWidth="36.0" text="id" />
+          <TableColumn prefWidth="136.0" text="Nome" />
+            <TableColumn prefWidth="109.0" text="CPF" />
+        </columns>
+      </TableView>
+      <Separator layoutX="12.0" layoutY="221.0" prefHeight="2.0" prefWidth="633.0" />
+      <TableView layoutX="335.0" layoutY="362.0" prefHeight="146.0" prefWidth="291.0">
+         <columns>
+            <TableColumn prefWidth="62.0" text="Código" />
+            <TableColumn prefWidth="110.0" text="Titulo" />
+            <TableColumn prefWidth="109.0" text="Autor" />
+         </columns>
+      </TableView>
+      <Button fx:id="btVoltar" layoutX="454.0" layoutY="188.0" mnemonicParsing="false" onAction="#voltarParaPrincipal" text="Voltar">
+         <font>
+            <Font name="Arial" size="14.0" />
+         </font>
+      </Button>
       <Separator layoutX="314.0" layoutY="224.0" orientation="VERTICAL" prefHeight="290.0" prefWidth="6.0" />
    </children>
 </AnchorPane>

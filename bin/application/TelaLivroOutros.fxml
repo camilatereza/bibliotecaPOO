@@ -13,7 +13,7 @@
   <items>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
          <children>
-            <Label layoutX="258.0" layoutY="14.0" text="LIVRO">
+            <Label layoutX="233.0" layoutY="14.0" text="LIVRO">
                <font>
                   <Font name="Arial Black" size="24.0" />
                </font>
@@ -23,7 +23,7 @@
                   <Font name="Arial" size="12.0" />
                </font>
             </Label>
-            <TextField fx:id="txCodigo" disable="true" editable="false" layoutX="101.0" layoutY="51.0" prefHeight="25.0" prefWidth="68.0">
+            <TextField fx:id="txCodigo" alignment="TOP_LEFT" disable="true" editable="false" layoutX="101.0" layoutY="51.0" prefHeight="25.0" prefWidth="68.0">
                <font>
                   <Font name="Arial" size="12.0" />
                </font>
@@ -33,7 +33,7 @@
                   <Font name="Arial" size="12.0" />
                </font>
             </Label>
-            <TextField fx:id="txTitulo" disable="true" editable="false" layoutX="101.0" layoutY="84.0" prefHeight="25.0" prefWidth="406.0">
+            <TextField fx:id="txTitulo" alignment="TOP_LEFT" disable="true" editable="false" layoutX="101.0" layoutY="84.0" prefHeight="25.0" prefWidth="406.0">
                <font>
                   <Font name="Arial" size="12.0" />
                </font>
@@ -43,7 +43,7 @@
                   <Font name="Arial" size="12.0" />
                </font>
             </Label>
-            <TextField fx:id="txAutor" disable="true" editable="false" layoutX="101.0" layoutY="117.0" prefHeight="25.0" prefWidth="406.0">
+            <TextField fx:id="txAutor" alignment="TOP_LEFT" disable="true" editable="false" layoutX="101.0" layoutY="117.0" prefHeight="25.0" prefWidth="406.0">
                <font>
                   <Font name="Arial" size="12.0" />
                </font>
@@ -53,7 +53,7 @@
                   <Font name="Arial" size="12.0" />
                </font>
             </Label>
-            <TextField fx:id="txAnoPublicacao" disable="true" editable="false" layoutX="140.0" layoutY="151.0" prefHeight="25.0" prefWidth="55.0">
+            <TextField fx:id="txAnoPublicacao" alignment="TOP_LEFT" disable="true" editable="false" layoutX="140.0" layoutY="151.0" prefHeight="25.0" prefWidth="55.0">
                <font>
                   <Font name="Arial" size="12.0" />
                </font>
@@ -63,7 +63,7 @@
                   <Font name="Arial" size="12.0" />
                </font>
             </Label>
-            <TextField fx:id="txGenero" disable="true" editable="false" layoutX="307.0" layoutY="151.0" prefHeight="25.0" prefWidth="201.0">
+            <TextField fx:id="txGenero" alignment="TOP_LEFT" disable="true" editable="false" layoutX="307.0" layoutY="151.0" prefHeight="25.0" prefWidth="201.0">
                <font>
                   <Font name="Arial" size="12.0" />
                </font>
@@ -73,18 +73,18 @@
                   <Font name="Arial" size="12.0" />
                </font>
             </Label>
-            <TextField fx:id="txDisponibilidade" disable="true" editable="false" layoutX="140.0" layoutY="185.0" prefHeight="25.0" prefWidth="134.0">
+            <TextField fx:id="txDisponibilidade" alignment="TOP_LEFT" disable="true" editable="false" layoutX="140.0" layoutY="185.0" prefHeight="25.0" prefWidth="134.0">
                <font>
                   <Font name="Arial" size="12.0" />
                </font>
             </TextField>
             <Label layoutX="280.0" layoutY="189.0" text="Idioma:" />
-            <TextField fx:id="txIdioma" disable="true" editable="false" layoutX="332.0" layoutY="185.0" prefHeight="25.0" prefWidth="176.0">
+            <TextField fx:id="txIdioma" alignment="TOP_LEFT" disable="true" editable="false" layoutX="332.0" layoutY="185.0" prefHeight="25.0" prefWidth="176.0">
                <font>
                   <Font name="Arial" size="12.0" />
                </font>
             </TextField>
-            <Button fx:id="btExcluir" layoutX="273.0" layoutY="218.0" mnemonicParsing="false" text="Excluir">
+            <Button fx:id="btExcluir" layoutX="248.0" layoutY="218.0" mnemonicParsing="false" text="Excluir">
                <font>
                   <Font name="Arial" size="12.0" />
                </font>
@@ -107,7 +107,7 @@
                   <Font name="Arial" size="12.0" />
                </font>
             </Label>
-            <TextField fx:id="txConsultaTitulo" editable="false" layoutX="99.0" layoutY="30.0" prefHeight="25.0" prefWidth="312.0">
+            <TextField fx:id="txConsultaTitulo" alignment="TOP_LEFT" editable="false" layoutX="99.0" layoutY="30.0" prefHeight="25.0" prefWidth="312.0">
                <font>
                   <Font name="Arial" size="12.0" />
                </font>
@@ -117,7 +117,7 @@
                   <Font name="Arial" size="12.0" />
                </font>
             </Label>
-            <TextField fx:id="txConsultaAutor" editable="false" layoutX="99.0" layoutY="62.0" prefHeight="25.0" prefWidth="312.0">
+            <TextField fx:id="txConsultaAutor" alignment="TOP_LEFT" editable="false" layoutX="99.0" layoutY="62.0" prefHeight="25.0" prefWidth="312.0">
                <font>
                   <Font name="Arial" size="12.0" />
                </font>
