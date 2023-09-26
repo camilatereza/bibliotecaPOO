@@ -7,16 +7,16 @@ import java.util.List;
 
 import javax.swing.JOptionPane;
 
-import connections.dao.LivroDAO;
-import connections.dao.ClienteDAO;
-import ufpb.poo.biblioteca.Datas;
-import ufpb.poo.biblioteca.Endereco;
-import ufpb.poo.biblioteca.Funcionario;
-import ufpb.poo.biblioteca.Livro;
-import ufpb.poo.biblioteca.SistemaLibrary;
-import ufpb.poo.biblioteca.Usuario;
-import ufpb.poo.biblioteca.exception.FuncionarioException;
-import ufpb.poo.biblioteca.exception.UsuarioException;
+import dao.ClienteDAO;
+import dao.LivroDAO;
+import model.Datas;
+import model.Endereco;
+import model.Funcionario;
+import model.Livro;
+import model.SistemaLibrary;
+import model.Usuario;
+import model.exception.FuncionarioException;
+import model.exception.UsuarioException;
 
 public class testeBiblioteca {
 
@@ -27,8 +27,8 @@ public class testeBiblioteca {
 		while (!sair) {
 
 			String opcao = JOptionPane.showInputDialog(
-					"Escolha uma das opções: \n" + "1 - Cadastrar Usuário \n" + "2 - Cadastrar Livro \n"
-							+ "3 - Cadastrar Funcionário \n" + "4 - Efetuar empréstimo \n" + "5 - Devolver livro");
+					"Escolha uma das opï¿½ï¿½es: \n" + "1 - Cadastrar Usuï¿½rio \n" + "2 - Cadastrar Livro \n"
+							+ "3 - Cadastrar Funcionï¿½rio \n" + "4 - Efetuar emprï¿½stimo \n" + "5 - Devolver livro");
 
 			switch (opcao) {
 			
@@ -101,13 +101,13 @@ public class testeBiblioteca {
 
 			case "7":
 				Date data = new Date();
-				DateFormat formataData = DateFormat.getDateInstance(); // MOSTRA SÓ A DATA
+				DateFormat formataData = DateFormat.getDateInstance(); // MOSTRA Sï¿½ A DATA
 				System.out.println(formataData.format(data));
 				System.out.println(data);
 				break;
 
 			default:
-				System.out.println("Opção inválida!");
+				System.out.println("Opï¿½ï¿½o invï¿½lida!");
 			}
 
 		}
